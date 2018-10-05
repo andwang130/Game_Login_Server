@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="LoginServer"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/wj/Game_Login_Server/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/wj/Game_Login_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/wj/Game_Login_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/wj/Game_Login_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/wj/Game_Login_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/wj/Game_Login_Server/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/wj/Game_Login_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/wj/Game_Login_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/wj/Game_Login_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/wj/Game_Login_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/wj/Game_Login_Server/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/wj/Game_Login_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/wj/Game_Login_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/wj/Game_Login_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/wj/Game_Login_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="LoginServer">
+				<Option output="/home/wj/Game_Login_Server/cmake-build-debug/LoginServer" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wj/Game_Login_Server/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/wj/Game_Login_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 LoginServer"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/wj/Game_Login_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/wj/Game_Login_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/wj/Game_Login_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="LoginServer/fast">
+				<Option output="/home/wj/Game_Login_Server/cmake-build-debug/LoginServer" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wj/Game_Login_Server/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/wj/Game_Login_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 LoginServer/fast"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/wj/Game_Login_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/wj/Game_Login_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/wj/Game_Login_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/wj/Game_Login_Server/Handler/BaseHandler.cpp">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/Handler/BaseHandler.h">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/Handler/LoginHandler.cpp">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/Handler/LoginHandler.h">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/Model/User.cpp">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/Model/User.h">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/Net/Acceptor.cpp">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/Net/Acceptor.h">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/Net/Buffer.cpp">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/Net/Buffer.h">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/Net/Channel.cpp">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/Net/Channel.h">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/Net/CurrentThread.h">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/Net/Epollpoller.cpp">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/Net/Epollpoller.h">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/Net/Eventloop.cpp">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/Net/Eventloop.h">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/Net/EventloopThread.cpp">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/Net/EventloopThread.h">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/Net/EventloopThreadpool.cpp">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/Net/EventloopThreadpool.h">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/Net/Mboost.cpp">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/Net/Mboost.h">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/Net/Socket.cpp">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/Net/Socket.h">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/Net/StringPiece.h">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/Net/TcpServer.cpp">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/Net/TcpServer.h">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/Net/Tcpcoonetion.cpp">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/Net/Tcpcoonetion.h">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/Net/Types.h">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/Net/inetAddress.cpp">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/Net/inetAddress.h">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/commds.h">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/intermediary.h">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/main.cpp">
+			<Option target="LoginServer"/>
+		</Unit>
+		<Unit filename="/home/wj/Game_Login_Server/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
