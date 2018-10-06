@@ -158,15 +158,15 @@ void Buffer::retrieveAll()
     writerIndex_ = kCheapPrepend;
 }
 
-string Buffer::retrieveAllAsString()
+std::string Buffer::retrieveAllAsString()
 {
     return retrieveAsString(readableBytes());
 }
 
-string Buffer::retrieveAsString(size_t len)
+std::string Buffer::retrieveAsString(size_t len)
 {
     assert(len <= readableBytes());
-    string result(peek(), len);
+    std::string result(peek(), len);
     retrieve(len);
     return result;
 }

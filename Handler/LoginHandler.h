@@ -9,7 +9,7 @@
 class LoginHandler: public BaseHandler
 {
 public:
-LoginHandler(const CoonPrt coonPrt ,protocol &aProtocol);
+LoginHandler(const CoonPrt coonPrt ,protocol_ &aProtocol);
 private:
     void login();
     void register_();

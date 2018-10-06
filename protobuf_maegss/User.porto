@@ -1,0 +1,19 @@
+syntax="proto3";
+package User;
+
+
+//登录消息
+message ReLogin
+{
+
+   string name=1;
+   string pasw=2;
+
+}
+//登录返回消息
+message RqLogin
+{
+
+     int32 code=1;
+
+}

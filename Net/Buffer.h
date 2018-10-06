@@ -47,9 +47,9 @@ public:
 
     void retrieveAll();
 
-    string retrieveAllAsString();
+    std::string retrieveAllAsString();
 
-    string retrieveAsString(size_t len);
+    std::string retrieveAsString(size_t len);
 
     StringPiece toStringPiece() const;
 

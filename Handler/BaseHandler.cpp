@@ -3,7 +3,7 @@
 //
 
 #include "BaseHandler.h"
-BaseHandler::BaseHandler(const CoonPrt coonPrt,protocol &aProtocol):
+BaseHandler::BaseHandler(const CoonPrt coonPrt,protocol_ &aProtocol):
 coonPrt_(coonPrt),
 aProtocol_(aProtocol)
 {

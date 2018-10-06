@@ -7,17 +7,17 @@
 #ifndef LOGINSERVER_COMMDS_H
 #define LOGINSERVER_COMMDS_H
 
-#endif //LOGINSERVER_COMMDS_H
+
 
 #include <iostream>
 #include "Net/Tcpcoonetion.h"
 
 typedef ZL::Net::TcpcoontionPrt CoonPrt;
-struct protocol
+struct protocol_
 {
-    unsigned int model;
-    int model2;
-    int coomd;
+    int16_t model;
+    int16_t model2;
+    int32_t coomd;
     std::string data;
 };
 
@@ -38,3 +38,4 @@ namespace Login_model
 
 
 }
+#endif //LOGINSERVER_COMMDS_H

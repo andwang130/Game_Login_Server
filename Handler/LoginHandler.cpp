@@ -4,7 +4,8 @@
 
 #include "LoginHandler.h"
 #include "../commds.h"
-LoginHandler::LoginHandler(const CoonPrt coonPrt, protocol &aProtocol):BaseHandler(coonPrt,aProtocol)
+#include "../protobuf_maegss/User.porto.pb.h"
+LoginHandler::LoginHandler(const CoonPrt coonPrt, protocol_ &aProtocol):BaseHandler(coonPrt,aProtocol)
 {
     if(aProtocol.coomd==Login_model::to_login::coomd::Login)
     {
@@ -17,7 +18,10 @@ LoginHandler::LoginHandler(const CoonPrt coonPrt, protocol &aProtocol):BaseHandl
 }
 void LoginHandler::login()
 {
-
+    User::ReLogin reLogin;
+    reLogin.ParseFromString(aProtocol_.data);
+    std::cout<<reLogin.pasw()<<std::endl;
+    std::cout<<reLogin.name()<<std::endl;
 }
 
 void LoginHandler::register_()

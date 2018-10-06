@@ -11,11 +11,11 @@
 class BaseHandler {
 
 public:
-    BaseHandler(const CoonPrt coonPrt,protocol &aProtocol);
+    BaseHandler(const CoonPrt coonPrt,protocol_ &aProtocol);
 
 protected:
     const CoonPrt coonPrt_;
-    protocol aProtocol_;
+    protocol_ aProtocol_;
 };
 
 
