@@ -1,0 +1,10 @@
+CREATE TABLE User
+(
+userid INT(4) NOT NULL AUTO_INCREMENT primary key,
+name VARCHAR(32) NOT NULL,
+pswd VARCHAR(32) NOT NULL,
+email VARCHAR(64) NOT NULL,
+phone VARCHAR(12) NOT NULL,
+createDate DATETIME NOT NULL,
+loginDate DATETIME
+);

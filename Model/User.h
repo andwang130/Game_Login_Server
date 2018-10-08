@@ -5,7 +5,7 @@
 #ifndef LOGINSERVER_USER_H
 #define LOGINSERVER_USER_H
 
-#endif //LOGINSERVER_USER_H
+
 
 #include <iostream>
 using namespace std;
@@ -14,11 +14,12 @@ class MUser
 {
 public:
     MUser();
-    MUser(string name,string pswd,string phone,string email);
-    void add_User(string name,string pswd);
-    string name_;
-    string pswd_;
-    string phone_;
-    string email_;
+    MUser(std::string name,std::string pswd,std::string phone,std::string email);
+    void add_User(std::string name,std::string pswd);
+    std::string name_;
+    std::string pswd_;
+    std::string phone_;
+    std::string email_;
 
 };
+#endif //LOGINSERVER_USER_H

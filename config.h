@@ -5,12 +5,19 @@
 #ifndef LOGINSERVER_CONFIG_H
 #define LOGINSERVER_CONFIG_H
 
-#include<dbinteface/mysqlpool.h>
-const int port=3306;
-const char *db="GmaeUser";
-const char *ip="127.0.0.1";
-const char *user="root";
-const char *pswd="WANGJING130"
-const max_size=10;
-static MysqlPool mysqlPool=new MysqlPool(db,ip,user,pswd,port,max_size);
+#include "dbinteface/mysqlpool.h"
+#include "base/MDatetime.h"
+
+static const int port=3306;
+static const char *db="Gamedb";
+static const char *ip="127.0.0.1";
+static const char *user="root";
+static const char *pswd="WANGJING123";
+static const int max_size=10;
+
+
+static mysqlpp::ConnectionPool * mysqlPool =new MysqlPool(db,ip,user,pswd,port,max_size);
+
+
+
 #endif //LOGINSERVER_CONFIG_H

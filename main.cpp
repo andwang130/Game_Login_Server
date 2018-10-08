@@ -3,8 +3,9 @@
 #include "Net/Tcpcoonetion.h"
 #include <assert.h>
 #include "commds.h"
-#include "protobuf_maegss/User.porto.pb.h"
+#include "protobuf_maegss/User.pb.h"
 #include "intermediary.h"
+#include "config.h"
 using namespace std;
 using namespace ZL;
 using namespace ZL::Net;
@@ -31,7 +32,7 @@ private:
     void on_meassgcallback(const TcpcoontionPrt &coon,Buffer*buffer,int m)
     {
         protocol_ aProtocol;
-        if(buffer->readableBytes()>13)
+        if(buffer->readableBytes()>=13)
         {   cout<<"收到消息"<<endl;
             int8_t types=buffer->readInt8();
             int32_t len=buffer->readInt32();

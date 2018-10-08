@@ -7,7 +7,7 @@ message ReLogin
 {
 
    string name=1;
-   string pasw=2;
+   string pswd=2;
 
 }
 //登录返回消息
@@ -31,9 +31,10 @@ message RqRegister
 
 message role
 {
+
     string roleName=1;
     int32 exp=2;
     int32 money=3;
-    int32 evel=4;
+    int32 level=4;
 
 }

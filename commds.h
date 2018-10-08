@@ -23,30 +23,35 @@ struct protocol_
     std::string  get_byte()
     {
 
-        std::string new_string;
 
         int len=13+data.size();
+        std::string new_string;
         new_string.resize(len);
         char buf[len];
+        memset(buf,0,len);
         int index=0;
-        memcpy(buf,&fin, sizeof(fin));
+        memcpy(&*new_string.begin(),&fin, sizeof(fin));
+
         index+= sizeof(fin);
-
-        memcpy(buf+index,&len, sizeof(len));
+        int bodySize=htobe32(data.size());
+        memcpy(&*new_string.begin()+index,&bodySize, sizeof(bodySize));
         index+= sizeof(len);
-
-        memcpy(buf+index,&model, sizeof(model));
+        model=htobe16(model);
+        memcpy(&*new_string.begin()+index,&model, sizeof(model));
         index+= sizeof(model);
 
-        memcpy(buf+index,&model2, sizeof(model2));
+        model2=htobe16(model2);
+        memcpy(&*new_string.begin()+index,&model2, sizeof(model2));
         index+= sizeof(model2);
 
-        memcpy(buf+index,&coomd, sizeof(coomd));
-        index+= sizeof(coomd);
 
-        memcpy(buf+index,data.c_str(),data.size());
-        new_string=buf;
-        return std::move(new_string);
+        coomd=htobe32(coomd);
+        memcpy(&*new_string.begin()+index,&coomd, sizeof(coomd));
+        index+= sizeof(coomd);
+        memcpy(&*new_string.begin()+index,&*data.begin(),data.size());
+
+        std::cout<<new_string.size()<<std::endl;
+        return new_string;
 
     }
 };

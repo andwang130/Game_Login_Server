@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.10)
 project(LoginServer)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-std=c++11 -pthread")#多线程需要的参数
+include_directories(/usr/include/mysql)
+
 find_package(Protobuf REQUIRED)
 if(PROTOBUF_FOUND)
     message(STATUS "protobuf library found")
@@ -46,10 +48,14 @@ add_executable(LoginServer main.cpp
         Handler/BaseHandler.h
         Model/User.h
         Model/User.cpp
-        protobuf_maegss/User.porto.pb.cc
+        protobuf_maegss/User.pb.cc
         Model/DataBase.h
         dbinteface/dbUser.cpp
         dbinteface/dbUser.h
         dbinteface/mysqlpool.h
-        config.h)
+        config.h
+        base/MDatetime.cpp
+        )
+target_link_libraries(LoginServer libmysqlpp.so)#会在lib路径找到
+
 target_link_libraries(LoginServer ${PROTOBUF_LIBRARIES})

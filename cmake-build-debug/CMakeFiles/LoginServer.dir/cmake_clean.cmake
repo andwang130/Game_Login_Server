@@ -15,8 +15,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/LoginServer.dir/Handler/LoginHandler.cpp.o"
   "CMakeFiles/LoginServer.dir/Handler/BaseHandler.cpp.o"
   "CMakeFiles/LoginServer.dir/Model/User.cpp.o"
-  "CMakeFiles/LoginServer.dir/protobuf_maegss/User.porto.pb.cc.o"
+  "CMakeFiles/LoginServer.dir/protobuf_maegss/User.pb.cc.o"
   "CMakeFiles/LoginServer.dir/dbinteface/dbUser.cpp.o"
+  "CMakeFiles/LoginServer.dir/base/MDatetime.cpp.o"
   "LoginServer.pdb"
   "LoginServer"
 )
