@@ -90,7 +90,8 @@ void TcpServer::removeConnectionInLoop(const TcpcoontionPrt &tcprt)
 {
     std::cout<<"Tcpsercer,removeConnectionInLoop"<<std::endl;
     size_t  n=coonections_.erase(tcprt->get_name());
-    Eventloop *loop=tcprt->get_loop();
-    loop->runinLoop(std::bind(&Tcpcoonetion::connectDestroyed,tcprt));
+//    Eventloop *loop=tcprt->get_loop();
+//    loop->runinLoop(std::bind(&Tcpcoonetion::connectDestroyed,tcprt));
+    tcprt->connectDestroyed();
 
 }

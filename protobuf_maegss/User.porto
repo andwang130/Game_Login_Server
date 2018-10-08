@@ -17,3 +17,23 @@ message RqLogin
      int32 code=1;
 
 }
+message ReRegister
+{
+   string name=1;
+   string pswd=2;
+   string phone=3;
+   string email=4;
+}
+message RqRegister
+{
+    int32 code=1;
+}
+
+message role
+{
+    string roleName=1;
+    int32 exp=2;
+    int32 money=3;
+    int32 evel=4;
+
+}

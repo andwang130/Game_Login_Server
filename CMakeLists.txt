@@ -47,5 +47,9 @@ add_executable(LoginServer main.cpp
         Model/User.h
         Model/User.cpp
         protobuf_maegss/User.porto.pb.cc
-        ${SRC_LIST}  ${PROTO_HDRS})
+        Model/DataBase.h
+        dbinteface/dbUser.cpp
+        dbinteface/dbUser.h
+        dbinteface/mysqlpool.h
+        config.h)
 target_link_libraries(LoginServer ${PROTOBUF_LIBRARIES})

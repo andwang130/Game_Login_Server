@@ -2,18 +2,23 @@
 // Created by wj on 18-10-5.
 //
 #include "User.h"
-void User::add_User(string name, string pswd)
+
+//
+
+void MUser::add_User(string name, string pswd)
 {
     name_=name;
     pswd_=pswd;
 }
-User::User()
+MUser::MUser()
 {
 
 }
-User::User(string name, string pswd):
+MUser::MUser(string name,string pswd,string phone,string email):
 name_(name),
-pswd_(pswd)
+pswd_(pswd),
+phone_(phone),
+email_(email)
 {
-    
+
 }

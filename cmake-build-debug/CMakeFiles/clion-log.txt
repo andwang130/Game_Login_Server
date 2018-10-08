@@ -1,0 +1,17 @@
+/home/wj/下载/clion-2018.2.4/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/wj/Game_Login_Server
+-- protobuf library found
+-- Configuring done
+CMake Error at CMakeLists.txt:17 (add_executable):
+  Cannot find source file:
+
+    Handler/getprotoc_.h
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .m .M .mm .h .hh .h++ .hm
+  .hpp .hxx .in .txx
+
+
+CMake Error at CMakeLists.txt:17 (add_executable):
+  No SOURCES given to target: LoginServer
+
+
+-- Build files have been written to: /home/wj/Game_Login_Server/cmake-build-debug

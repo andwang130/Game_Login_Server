@@ -10,15 +10,15 @@
 #include <iostream>
 using namespace std;
 
-class User
+class MUser
 {
 public:
-    User();
-    User(string name,string pswd);
+    MUser();
+    MUser(string name,string pswd,string phone,string email);
     void add_User(string name,string pswd);
-private:
     string name_;
     string pswd_;
-
+    string phone_;
+    string email_;
 
 };
