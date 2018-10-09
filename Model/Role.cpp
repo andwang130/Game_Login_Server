@@ -2,7 +2,7 @@
 // Created by wj on 18-10-9.
 //
 #include "Role.h"
-Role::Role(string rolename, int exp, int money, int level,int userid,int roleid):
+Role::Role(std::string rolename, int exp, int money, int level,int userid,int roleid):
 roleName_(rolename),
 exp_(exp),
 money_(money),

@@ -40,6 +40,8 @@ void LoginHandler::login()
     }
     else
     {
+        std::cout<<mUser->name_<<":"<<name<<std::endl;
+        std::cout<<mUser->pswd_<<":"<<pswd<<std::endl;
         if(mUser->name_==name&&mUser->pswd_==pswd)
         {
             flag=0;
@@ -48,7 +50,8 @@ void LoginHandler::login()
                 Login_User[coonPrt_] = mUser;
             }
 
-        } else
+        }
+        else
         {
             flag=-1;
         }

@@ -6,6 +6,7 @@
 Role dbrole::getrole()
 {
 
+    
 }
 
 int dbrole::addrole(Role role)

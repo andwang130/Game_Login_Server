@@ -30,17 +30,18 @@ std::shared_ptr<MUser>  dbUser::get_User(string &name)
     query.parse();
     query.template_defaults[1]=name.c_str();
     mysqlpp::StoreQueryResult result=query.store();
-    std::shared_ptr<MUser>  mUser;
+    MUser  mUser;
     if(result.num_rows()>0)
     {
-        mUser->name_=result[0]["name"].c_str();
-        mUser->pswd_=result[0]["pswd"].c_str();
-        mUser->email_=result[0]["email"].c_str();
-        mUser->pswd_=result[0]["phone"].c_str();
-        mUser->userid=result[0]["userid"];
-        return mUser;
+
+        mUser.name_=result[0]["name"].c_str();
+        mUser.pswd_=result[0]["pswd"].c_str();
+        mUser.email_=result[0]["email"].c_str();
+        mUser.phone_=result[0]["phone"].c_str();
+        mUser.userid=result[0]["userid"];
+        std::make_shared<MUser>(mUser);  //返回的是一个shared_ptr指针
     }
-    return mUser;
+    return std::make_shared<MUser>(mUser);
 }
 
 

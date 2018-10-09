@@ -18,11 +18,15 @@ inline void intermeadiary(const TcpcoontionPrt connprt,protocol_ &aProtocol_)
     switch (aProtocol_.model)
     {
         case Login_model::level1:
+        {
             LoginHandler loginHandler(connprt, aProtocol_);
             break;
+        }
         case role::level1:
+        {
             roleHandler roleHandler1(connprt,aProtocol_);
             break;
+        }
 
 
     }
