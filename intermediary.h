@@ -10,6 +10,7 @@
 #include "commds.h"
 #include "Net/Tcpcoonetion.h"
 #include "Handler/LoginHandler.h"
+#include "Handler/roleHandler.h"
 using namespace ZL;
 using namespace ZL::Net;
 inline void intermeadiary(const TcpcoontionPrt connprt,protocol_ &aProtocol_)
@@ -18,6 +19,9 @@ inline void intermeadiary(const TcpcoontionPrt connprt,protocol_ &aProtocol_)
     {
         case Login_model::level1:
             LoginHandler loginHandler(connprt, aProtocol_);
+            break;
+        case role::level1:
+            roleHandler roleHandler1(connprt,aProtocol_);
             break;
 
 

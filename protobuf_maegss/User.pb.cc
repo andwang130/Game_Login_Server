@@ -40,11 +40,21 @@ class RqRegisterDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<RqRegister>
       _instance;
 } _RqRegister_default_instance_;
-class roleDefaultTypeInternal {
+class RqroleDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<role>
+  ::google::protobuf::internal::ExplicitlyConstructed<Rqrole>
       _instance;
-} _role_default_instance_;
+} _Rqrole_default_instance_;
+class addroleDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<addrole>
+      _instance;
+} _addrole_default_instance_;
+class rqcodeDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<rqcode>
+      _instance;
+} _rqcode_default_instance_;
 }  // namespace User
 namespace protobuf_User_2eproto {
 static void InitDefaultsReLogin() {
@@ -103,29 +113,59 @@ static void InitDefaultsRqRegister() {
 ::google::protobuf::internal::SCCInfo<0> scc_info_RqRegister =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsRqRegister}, {}};
 
-static void InitDefaultsrole() {
+static void InitDefaultsRqrole() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::User::_role_default_instance_;
-    new (ptr) ::User::role();
+    void* ptr = &::User::_Rqrole_default_instance_;
+    new (ptr) ::User::Rqrole();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::User::role::InitAsDefaultInstance();
+  ::User::Rqrole::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_role =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsrole}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_Rqrole =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsRqrole}, {}};
+
+static void InitDefaultsaddrole() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::User::_addrole_default_instance_;
+    new (ptr) ::User::addrole();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::User::addrole::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_addrole =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsaddrole}, {}};
+
+static void InitDefaultsrqcode() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::User::_rqcode_default_instance_;
+    new (ptr) ::User::rqcode();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::User::rqcode::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_rqcode =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsrqcode}, {}};
 
 void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_ReLogin.base);
   ::google::protobuf::internal::InitSCC(&scc_info_RqLogin.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ReRegister.base);
   ::google::protobuf::internal::InitSCC(&scc_info_RqRegister.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_role.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_Rqrole.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_addrole.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_rqcode.base);
 }
 
-::google::protobuf::Metadata file_level_metadata[5];
+::google::protobuf::Metadata file_level_metadata[7];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
@@ -157,21 +197,35 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::User::RqRegister, code_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::User::role, _internal_metadata_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::User::Rqrole, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::User::role, rolename_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::User::role, exp_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::User::role, money_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::User::role, level_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::User::Rqrole, rolename_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::User::Rqrole, exp_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::User::Rqrole, money_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::User::Rqrole, level_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::User::addrole, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::User::addrole, rolename_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::User::rqcode, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::User::rqcode, code_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::User::ReLogin)},
   { 7, -1, sizeof(::User::RqLogin)},
   { 13, -1, sizeof(::User::ReRegister)},
   { 22, -1, sizeof(::User::RqRegister)},
-  { 28, -1, sizeof(::User::role)},
+  { 28, -1, sizeof(::User::Rqrole)},
+  { 37, -1, sizeof(::User::addrole)},
+  { 43, -1, sizeof(::User::rqcode)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -179,7 +233,9 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::User::_RqLogin_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::User::_ReRegister_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::User::_RqRegister_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::User::_role_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::User::_Rqrole_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::User::_addrole_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::User::_rqcode_default_instance_),
 };
 
 void protobuf_AssignDescriptors() {
@@ -197,7 +253,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 5);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 7);
 }
 
 void AddDescriptorsImpl() {
@@ -207,12 +263,13 @@ void AddDescriptorsImpl() {
       "\001(\t\022\014\n\004pswd\030\002 \001(\t\"\027\n\007RqLogin\022\014\n\004code\030\001 \001"
       "(\005\"F\n\nReRegister\022\014\n\004name\030\001 \001(\t\022\014\n\004pswd\030\002"
       " \001(\t\022\r\n\005phone\030\003 \001(\t\022\r\n\005email\030\004 \001(\t\"\032\n\nRq"
-      "Register\022\014\n\004code\030\001 \001(\005\"C\n\004role\022\020\n\010roleNa"
-      "me\030\001 \001(\t\022\013\n\003exp\030\002 \001(\005\022\r\n\005money\030\003 \001(\005\022\r\n\005"
-      "level\030\004 \001(\005b\006proto3"
+      "Register\022\014\n\004code\030\001 \001(\005\"E\n\006Rqrole\022\020\n\010role"
+      "Name\030\001 \001(\t\022\013\n\003exp\030\002 \001(\005\022\r\n\005money\030\003 \001(\005\022\r"
+      "\n\005level\030\004 \001(\005\"\033\n\007addrole\022\020\n\010roleName\030\001 \001"
+      "(\t\"\026\n\006rqcode\022\014\n\004code\030\001 \001(\005b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 259);
+      descriptor, 314);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "User.proto", &protobuf_RegisterTypes);
 }
@@ -1394,23 +1451,23 @@ void RqRegister::InternalSwap(RqRegister* other) {
 
 // ===================================================================
 
-void role::InitAsDefaultInstance() {
+void Rqrole::InitAsDefaultInstance() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int role::kRoleNameFieldNumber;
-const int role::kExpFieldNumber;
-const int role::kMoneyFieldNumber;
-const int role::kLevelFieldNumber;
+const int Rqrole::kRoleNameFieldNumber;
+const int Rqrole::kExpFieldNumber;
+const int Rqrole::kMoneyFieldNumber;
+const int Rqrole::kLevelFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-role::role()
+Rqrole::Rqrole()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   ::google::protobuf::internal::InitSCC(
-      &protobuf_User_2eproto::scc_info_role.base);
+      &protobuf_User_2eproto::scc_info_Rqrole.base);
   SharedCtor();
-  // @@protoc_insertion_point(constructor:User.role)
+  // @@protoc_insertion_point(constructor:User.Rqrole)
 }
-role::role(const role& from)
+Rqrole::Rqrole(const Rqrole& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
@@ -1421,41 +1478,41 @@ role::role(const role& from)
   ::memcpy(&exp_, &from.exp_,
     static_cast<size_t>(reinterpret_cast<char*>(&level_) -
     reinterpret_cast<char*>(&exp_)) + sizeof(level_));
-  // @@protoc_insertion_point(copy_constructor:User.role)
+  // @@protoc_insertion_point(copy_constructor:User.Rqrole)
 }
 
-void role::SharedCtor() {
+void Rqrole::SharedCtor() {
   rolename_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&exp_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&level_) -
       reinterpret_cast<char*>(&exp_)) + sizeof(level_));
 }
 
-role::~role() {
-  // @@protoc_insertion_point(destructor:User.role)
+Rqrole::~Rqrole() {
+  // @@protoc_insertion_point(destructor:User.Rqrole)
   SharedDtor();
 }
 
-void role::SharedDtor() {
+void Rqrole::SharedDtor() {
   rolename_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
-void role::SetCachedSize(int size) const {
+void Rqrole::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* role::descriptor() {
+const ::google::protobuf::Descriptor* Rqrole::descriptor() {
   ::protobuf_User_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_User_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
-const role& role::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_User_2eproto::scc_info_role.base);
+const Rqrole& Rqrole::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_User_2eproto::scc_info_Rqrole.base);
   return *internal_default_instance();
 }
 
 
-void role::Clear() {
-// @@protoc_insertion_point(message_clear_start:User.role)
+void Rqrole::Clear() {
+// @@protoc_insertion_point(message_clear_start:User.Rqrole)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1467,11 +1524,11 @@ void role::Clear() {
   _internal_metadata_.Clear();
 }
 
-bool role::MergePartialFromCodedStream(
+bool Rqrole::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:User.role)
+  // @@protoc_insertion_point(parse_start:User.Rqrole)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
@@ -1486,7 +1543,7 @@ bool role::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->rolename().data(), static_cast<int>(this->rolename().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "User.role.roleName"));
+            "User.Rqrole.roleName"));
         } else {
           goto handle_unusual;
         }
@@ -1547,17 +1604,17 @@ bool role::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:User.role)
+  // @@protoc_insertion_point(parse_success:User.Rqrole)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:User.role)
+  // @@protoc_insertion_point(parse_failure:User.Rqrole)
   return false;
 #undef DO_
 }
 
-void role::SerializeWithCachedSizes(
+void Rqrole::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:User.role)
+  // @@protoc_insertion_point(serialize_start:User.Rqrole)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1566,7 +1623,7 @@ void role::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->rolename().data(), static_cast<int>(this->rolename().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "User.role.roleName");
+      "User.Rqrole.roleName");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       1, this->rolename(), output);
   }
@@ -1590,13 +1647,13 @@ void role::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
   }
-  // @@protoc_insertion_point(serialize_end:User.role)
+  // @@protoc_insertion_point(serialize_end:User.Rqrole)
 }
 
-::google::protobuf::uint8* role::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* Rqrole::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
   (void)deterministic; // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:User.role)
+  // @@protoc_insertion_point(serialize_to_array_start:User.Rqrole)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1605,7 +1662,7 @@ void role::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->rolename().data(), static_cast<int>(this->rolename().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "User.role.roleName");
+      "User.Rqrole.roleName");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         1, this->rolename(), target);
@@ -1630,12 +1687,12 @@ void role::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:User.role)
+  // @@protoc_insertion_point(serialize_to_array_end:User.Rqrole)
   return target;
 }
 
-size_t role::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:User.role)
+size_t Rqrole::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:User.Rqrole)
   size_t total_size = 0;
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1676,23 +1733,23 @@ size_t role::ByteSizeLong() const {
   return total_size;
 }
 
-void role::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:User.role)
+void Rqrole::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:User.Rqrole)
   GOOGLE_DCHECK_NE(&from, this);
-  const role* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const role>(
+  const Rqrole* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const Rqrole>(
           &from);
   if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:User.role)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:User.Rqrole)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:User.role)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:User.Rqrole)
     MergeFrom(*source);
   }
 }
 
-void role::MergeFrom(const role& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:User.role)
+void Rqrole::MergeFrom(const Rqrole& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:User.Rqrole)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -1713,29 +1770,29 @@ void role::MergeFrom(const role& from) {
   }
 }
 
-void role::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:User.role)
+void Rqrole::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:User.Rqrole)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void role::CopyFrom(const role& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:User.role)
+void Rqrole::CopyFrom(const Rqrole& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:User.Rqrole)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool role::IsInitialized() const {
+bool Rqrole::IsInitialized() const {
   return true;
 }
 
-void role::Swap(role* other) {
+void Rqrole::Swap(Rqrole* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void role::InternalSwap(role* other) {
+void Rqrole::InternalSwap(Rqrole* other) {
   using std::swap;
   rolename_.Swap(&other->rolename_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
@@ -1745,7 +1802,472 @@ void role::InternalSwap(role* other) {
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata role::GetMetadata() const {
+::google::protobuf::Metadata Rqrole::GetMetadata() const {
+  protobuf_User_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_User_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void addrole::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int addrole::kRoleNameFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+addrole::addrole()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_User_2eproto::scc_info_addrole.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:User.addrole)
+}
+addrole::addrole(const addrole& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  rolename_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.rolename().size() > 0) {
+    rolename_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.rolename_);
+  }
+  // @@protoc_insertion_point(copy_constructor:User.addrole)
+}
+
+void addrole::SharedCtor() {
+  rolename_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+addrole::~addrole() {
+  // @@protoc_insertion_point(destructor:User.addrole)
+  SharedDtor();
+}
+
+void addrole::SharedDtor() {
+  rolename_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void addrole::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* addrole::descriptor() {
+  ::protobuf_User_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_User_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const addrole& addrole::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_User_2eproto::scc_info_addrole.base);
+  return *internal_default_instance();
+}
+
+
+void addrole::Clear() {
+// @@protoc_insertion_point(message_clear_start:User.addrole)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  rolename_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  _internal_metadata_.Clear();
+}
+
+bool addrole::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:User.addrole)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // string roleName = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_rolename()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->rolename().data(), static_cast<int>(this->rolename().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "User.addrole.roleName"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:User.addrole)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:User.addrole)
+  return false;
+#undef DO_
+}
+
+void addrole::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:User.addrole)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string roleName = 1;
+  if (this->rolename().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->rolename().data(), static_cast<int>(this->rolename().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "User.addrole.roleName");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->rolename(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:User.addrole)
+}
+
+::google::protobuf::uint8* addrole::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:User.addrole)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string roleName = 1;
+  if (this->rolename().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->rolename().data(), static_cast<int>(this->rolename().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "User.addrole.roleName");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->rolename(), target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:User.addrole)
+  return target;
+}
+
+size_t addrole::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:User.addrole)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // string roleName = 1;
+  if (this->rolename().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->rolename());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void addrole::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:User.addrole)
+  GOOGLE_DCHECK_NE(&from, this);
+  const addrole* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const addrole>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:User.addrole)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:User.addrole)
+    MergeFrom(*source);
+  }
+}
+
+void addrole::MergeFrom(const addrole& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:User.addrole)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.rolename().size() > 0) {
+
+    rolename_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.rolename_);
+  }
+}
+
+void addrole::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:User.addrole)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void addrole::CopyFrom(const addrole& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:User.addrole)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool addrole::IsInitialized() const {
+  return true;
+}
+
+void addrole::Swap(addrole* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void addrole::InternalSwap(addrole* other) {
+  using std::swap;
+  rolename_.Swap(&other->rolename_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata addrole::GetMetadata() const {
+  protobuf_User_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_User_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void rqcode::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int rqcode::kCodeFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+rqcode::rqcode()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_User_2eproto::scc_info_rqcode.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:User.rqcode)
+}
+rqcode::rqcode(const rqcode& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  code_ = from.code_;
+  // @@protoc_insertion_point(copy_constructor:User.rqcode)
+}
+
+void rqcode::SharedCtor() {
+  code_ = 0;
+}
+
+rqcode::~rqcode() {
+  // @@protoc_insertion_point(destructor:User.rqcode)
+  SharedDtor();
+}
+
+void rqcode::SharedDtor() {
+}
+
+void rqcode::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* rqcode::descriptor() {
+  ::protobuf_User_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_User_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const rqcode& rqcode::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_User_2eproto::scc_info_rqcode.base);
+  return *internal_default_instance();
+}
+
+
+void rqcode::Clear() {
+// @@protoc_insertion_point(message_clear_start:User.rqcode)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  code_ = 0;
+  _internal_metadata_.Clear();
+}
+
+bool rqcode::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:User.rqcode)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // int32 code = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &code_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:User.rqcode)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:User.rqcode)
+  return false;
+#undef DO_
+}
+
+void rqcode::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:User.rqcode)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 code = 1;
+  if (this->code() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->code(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:User.rqcode)
+}
+
+::google::protobuf::uint8* rqcode::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:User.rqcode)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 code = 1;
+  if (this->code() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->code(), target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:User.rqcode)
+  return target;
+}
+
+size_t rqcode::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:User.rqcode)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // int32 code = 1;
+  if (this->code() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->code());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void rqcode::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:User.rqcode)
+  GOOGLE_DCHECK_NE(&from, this);
+  const rqcode* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const rqcode>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:User.rqcode)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:User.rqcode)
+    MergeFrom(*source);
+  }
+}
+
+void rqcode::MergeFrom(const rqcode& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:User.rqcode)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.code() != 0) {
+    set_code(from.code());
+  }
+}
+
+void rqcode::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:User.rqcode)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void rqcode::CopyFrom(const rqcode& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:User.rqcode)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool rqcode::IsInitialized() const {
+  return true;
+}
+
+void rqcode::Swap(rqcode* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void rqcode::InternalSwap(rqcode* other) {
+  using std::swap;
+  swap(code_, other->code_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata rqcode::GetMetadata() const {
   protobuf_User_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_User_2eproto::file_level_metadata[kIndexInFileMessages];
 }
@@ -1767,8 +2289,14 @@ template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::User::ReRegister* Arena::CreateM
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::User::RqRegister* Arena::CreateMaybeMessage< ::User::RqRegister >(Arena* arena) {
   return Arena::CreateInternal< ::User::RqRegister >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::User::role* Arena::CreateMaybeMessage< ::User::role >(Arena* arena) {
-  return Arena::CreateInternal< ::User::role >(arena);
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::User::Rqrole* Arena::CreateMaybeMessage< ::User::Rqrole >(Arena* arena) {
+  return Arena::CreateInternal< ::User::Rqrole >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::User::addrole* Arena::CreateMaybeMessage< ::User::addrole >(Arena* arena) {
+  return Arena::CreateInternal< ::User::addrole >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::User::rqcode* Arena::CreateMaybeMessage< ::User::rqcode >(Arena* arena) {
+  return Arena::CreateInternal< ::User::rqcode >(arena);
 }
 }  // namespace protobuf
 }  // namespace google

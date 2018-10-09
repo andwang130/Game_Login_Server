@@ -18,7 +18,8 @@ MUser::MUser(string name,string pswd,string phone,string email):
 name_(name),
 pswd_(pswd),
 phone_(phone),
-email_(email)
+email_(email),
+userid(0)
 {
 
 }

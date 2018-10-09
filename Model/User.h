@@ -20,6 +20,7 @@ public:
     std::string pswd_;
     std::string phone_;
     std::string email_;
+    int userid;
 
 };
 #endif //LOGINSERVER_USER_H

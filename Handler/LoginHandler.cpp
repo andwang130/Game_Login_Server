@@ -33,16 +33,21 @@ void LoginHandler::login()
 
     int flag=0;//0成功，-1失败。-2未注册
     dbUser dbuser;
-    MUser mUser=dbuser.get_User(name);
-    if(mUser.name_.empty())
+    prt_User mUser=dbuser.get_User(name);
+    if(mUser->name_.empty())
     {
         flag=-2;
     }
     else
     {
-        if(mUser.name_==name&&mUser.pswd_==pswd)
+        if(mUser->name_==name&&mUser->pswd_==pswd)
         {
             flag=0;
+            {
+                std::lock_guard<mutex> lk(Mutex);
+                Login_User[coonPrt_] = mUser;
+            }
+
         } else
         {
             flag=-1;
@@ -52,6 +57,7 @@ void LoginHandler::login()
 
     User::RqLogin rqLogin;
     rqLogin.set_code(flag);
+    newprotocol.data=rqLogin.SerializeAsString();
     std::string buf=newprotocol.get_byte();
     coonPrt_->sendloop(buf);
 }

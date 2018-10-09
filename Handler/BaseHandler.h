@@ -7,13 +7,14 @@
 
 #include "../commds.h"
 #include "../Net/Tcpcoonetion.h"
-
+#include "../Model/DataBase.h"
 class BaseHandler {
 
 public:
     BaseHandler(const CoonPrt coonPrt,protocol_ &aProtocol);
 
 protected:
+
     const CoonPrt coonPrt_;
     protocol_ aProtocol_;
 };

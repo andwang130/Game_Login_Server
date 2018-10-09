@@ -78,6 +78,11 @@ void TcpServer::set_threadnumber(int num)
     eventloopThreadpool_->set_Threadnumbre(num);
 }
 
+void TcpServer::set_removeCallback_(const removeCallback &cb)
+{
+    removeCallback_=cb;
+}
+
 
 void TcpServer::removeConnection(const TcpcoontionPrt &tcprt)
 {
@@ -92,6 +97,7 @@ void TcpServer::removeConnectionInLoop(const TcpcoontionPrt &tcprt)
     size_t  n=coonections_.erase(tcprt->get_name());
 //    Eventloop *loop=tcprt->get_loop();
 //    loop->runinLoop(std::bind(&Tcpcoonetion::connectDestroyed,tcprt));
+    removeCallback_(tcprt);
     tcprt->connectDestroyed();
 
 }

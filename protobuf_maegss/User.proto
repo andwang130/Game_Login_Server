@@ -29,12 +29,26 @@ message RqRegister
     int32 code=1;
 }
 
-message role
-{
 
+//角色信息
+message Rqrole
+{
     string roleName=1;
     int32 exp=2;
     int32 money=3;
     int32 level=4;
+}
+message addrole
+{
+    string roleName=1;
+}
 
+//返回状态码，
+//0成功
+//-1失败
+//-2数据库错误
+//-3未登录
+message rqcode
+{
+    int32 code=1;
 }

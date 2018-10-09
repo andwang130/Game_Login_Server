@@ -22,6 +22,7 @@ namespace Net {
     typedef std::function<void(const TcpcoontionPrt &, Buffer *, int)> MessageCallback;
 
     typedef std::function<void(const Eventloop *)> ThreadInitCallback;
+    typedef std::function<void(const TcpcoontionPrt &)> removeCallback;
 }
 }
 

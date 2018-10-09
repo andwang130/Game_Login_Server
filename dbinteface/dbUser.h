@@ -7,18 +7,14 @@
 
 #include <iostream>
 #include "../Model/User.h"
-#include "../config.h"
+#include "dbBase.h"
 using namespace std;
-class dbUser {
+class dbUser: public dbBase
+{
 
 public:
-    dbUser();
-    ~dbUser();
-    MUser get_User(std::string &name);
+    std::shared_ptr<MUser>  get_User(std::string &name);
     int add_User(MUser &user);
-
-private:
-    mysqlpp::Connection *coon;
 };
 
 

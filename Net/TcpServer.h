@@ -39,6 +39,7 @@ public:
 
     void set_threadnumber(int num);
 
+    void set_removeCallback_(const removeCallback &cb);
     //Acceptor接到新的连接调用的函数
     //CloseCallback调用
     void removeConnection(const TcpcoontionPrt &tcprt);
@@ -70,6 +71,7 @@ private:
     WriteCompleteCallback writeCompleteCallback_;
     ConnectionCallback connectionCallback_;
     ThreadInitCallback threadInitCallback_;
+    removeCallback removeCallback_;
     std::map<std::string,TcpcoontionPrt> coonections_;
     //连接数
     int nextConnId_;

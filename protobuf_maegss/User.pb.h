@@ -38,7 +38,7 @@ namespace protobuf_User_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[5];
+  static const ::google::protobuf::internal::ParseTable schema[7];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -58,9 +58,15 @@ extern RqLoginDefaultTypeInternal _RqLogin_default_instance_;
 class RqRegister;
 class RqRegisterDefaultTypeInternal;
 extern RqRegisterDefaultTypeInternal _RqRegister_default_instance_;
-class role;
-class roleDefaultTypeInternal;
-extern roleDefaultTypeInternal _role_default_instance_;
+class Rqrole;
+class RqroleDefaultTypeInternal;
+extern RqroleDefaultTypeInternal _Rqrole_default_instance_;
+class addrole;
+class addroleDefaultTypeInternal;
+extern addroleDefaultTypeInternal _addrole_default_instance_;
+class rqcode;
+class rqcodeDefaultTypeInternal;
+extern rqcodeDefaultTypeInternal _rqcode_default_instance_;
 }  // namespace User
 namespace google {
 namespace protobuf {
@@ -68,7 +74,9 @@ template<> ::User::ReLogin* Arena::CreateMaybeMessage<::User::ReLogin>(Arena*);
 template<> ::User::ReRegister* Arena::CreateMaybeMessage<::User::ReRegister>(Arena*);
 template<> ::User::RqLogin* Arena::CreateMaybeMessage<::User::RqLogin>(Arena*);
 template<> ::User::RqRegister* Arena::CreateMaybeMessage<::User::RqRegister>(Arena*);
-template<> ::User::role* Arena::CreateMaybeMessage<::User::role>(Arena*);
+template<> ::User::Rqrole* Arena::CreateMaybeMessage<::User::Rqrole>(Arena*);
+template<> ::User::addrole* Arena::CreateMaybeMessage<::User::addrole>(Arena*);
+template<> ::User::rqcode* Arena::CreateMaybeMessage<::User::rqcode>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace User {
@@ -563,24 +571,24 @@ class RqRegister : public ::google::protobuf::Message /* @@protoc_insertion_poin
 };
 // -------------------------------------------------------------------
 
-class role : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:User.role) */ {
+class Rqrole : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:User.Rqrole) */ {
  public:
-  role();
-  virtual ~role();
+  Rqrole();
+  virtual ~Rqrole();
 
-  role(const role& from);
+  Rqrole(const Rqrole& from);
 
-  inline role& operator=(const role& from) {
+  inline Rqrole& operator=(const Rqrole& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  role(role&& from) noexcept
-    : role() {
+  Rqrole(Rqrole&& from) noexcept
+    : Rqrole() {
     *this = ::std::move(from);
   }
 
-  inline role& operator=(role&& from) noexcept {
+  inline Rqrole& operator=(Rqrole&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -590,34 +598,34 @@ class role : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   }
   #endif
   static const ::google::protobuf::Descriptor* descriptor();
-  static const role& default_instance();
+  static const Rqrole& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const role* internal_default_instance() {
-    return reinterpret_cast<const role*>(
-               &_role_default_instance_);
+  static inline const Rqrole* internal_default_instance() {
+    return reinterpret_cast<const Rqrole*>(
+               &_Rqrole_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     4;
 
-  void Swap(role* other);
-  friend void swap(role& a, role& b) {
+  void Swap(Rqrole* other);
+  friend void swap(Rqrole& a, Rqrole& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline role* New() const final {
-    return CreateMaybeMessage<role>(NULL);
+  inline Rqrole* New() const final {
+    return CreateMaybeMessage<Rqrole>(NULL);
   }
 
-  role* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<role>(arena);
+  Rqrole* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Rqrole>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const role& from);
-  void MergeFrom(const role& from);
+  void CopyFrom(const Rqrole& from);
+  void MergeFrom(const Rqrole& from);
   void Clear() final;
   bool IsInitialized() const final;
 
@@ -634,7 +642,7 @@ class role : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(role* other);
+  void InternalSwap(Rqrole* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return NULL;
@@ -682,7 +690,7 @@ class role : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   ::google::protobuf::int32 level() const;
   void set_level(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:User.role)
+  // @@protoc_insertion_point(class_scope:User.Rqrole)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
@@ -690,6 +698,220 @@ class role : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   ::google::protobuf::int32 exp_;
   ::google::protobuf::int32 money_;
   ::google::protobuf::int32 level_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_User_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class addrole : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:User.addrole) */ {
+ public:
+  addrole();
+  virtual ~addrole();
+
+  addrole(const addrole& from);
+
+  inline addrole& operator=(const addrole& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  addrole(addrole&& from) noexcept
+    : addrole() {
+    *this = ::std::move(from);
+  }
+
+  inline addrole& operator=(addrole&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const addrole& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const addrole* internal_default_instance() {
+    return reinterpret_cast<const addrole*>(
+               &_addrole_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  void Swap(addrole* other);
+  friend void swap(addrole& a, addrole& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline addrole* New() const final {
+    return CreateMaybeMessage<addrole>(NULL);
+  }
+
+  addrole* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<addrole>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const addrole& from);
+  void MergeFrom(const addrole& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(addrole* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string roleName = 1;
+  void clear_rolename();
+  static const int kRoleNameFieldNumber = 1;
+  const ::std::string& rolename() const;
+  void set_rolename(const ::std::string& value);
+  #if LANG_CXX11
+  void set_rolename(::std::string&& value);
+  #endif
+  void set_rolename(const char* value);
+  void set_rolename(const char* value, size_t size);
+  ::std::string* mutable_rolename();
+  ::std::string* release_rolename();
+  void set_allocated_rolename(::std::string* rolename);
+
+  // @@protoc_insertion_point(class_scope:User.addrole)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr rolename_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_User_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class rqcode : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:User.rqcode) */ {
+ public:
+  rqcode();
+  virtual ~rqcode();
+
+  rqcode(const rqcode& from);
+
+  inline rqcode& operator=(const rqcode& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  rqcode(rqcode&& from) noexcept
+    : rqcode() {
+    *this = ::std::move(from);
+  }
+
+  inline rqcode& operator=(rqcode&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const rqcode& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const rqcode* internal_default_instance() {
+    return reinterpret_cast<const rqcode*>(
+               &_rqcode_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  void Swap(rqcode* other);
+  friend void swap(rqcode& a, rqcode& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline rqcode* New() const final {
+    return CreateMaybeMessage<rqcode>(NULL);
+  }
+
+  rqcode* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<rqcode>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const rqcode& from);
+  void MergeFrom(const rqcode& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(rqcode* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // int32 code = 1;
+  void clear_code();
+  static const int kCodeFieldNumber = 1;
+  ::google::protobuf::int32 code() const;
+  void set_code(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:User.rqcode)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::int32 code_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_User_2eproto::TableStruct;
 };
@@ -1064,106 +1286,185 @@ inline void RqRegister::set_code(::google::protobuf::int32 value) {
 
 // -------------------------------------------------------------------
 
-// role
+// Rqrole
 
 // string roleName = 1;
-inline void role::clear_rolename() {
+inline void Rqrole::clear_rolename() {
   rolename_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& role::rolename() const {
-  // @@protoc_insertion_point(field_get:User.role.roleName)
+inline const ::std::string& Rqrole::rolename() const {
+  // @@protoc_insertion_point(field_get:User.Rqrole.roleName)
   return rolename_.GetNoArena();
 }
-inline void role::set_rolename(const ::std::string& value) {
+inline void Rqrole::set_rolename(const ::std::string& value) {
   
   rolename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:User.role.roleName)
+  // @@protoc_insertion_point(field_set:User.Rqrole.roleName)
 }
 #if LANG_CXX11
-inline void role::set_rolename(::std::string&& value) {
+inline void Rqrole::set_rolename(::std::string&& value) {
   
   rolename_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:User.role.roleName)
+  // @@protoc_insertion_point(field_set_rvalue:User.Rqrole.roleName)
 }
 #endif
-inline void role::set_rolename(const char* value) {
+inline void Rqrole::set_rolename(const char* value) {
   GOOGLE_DCHECK(value != NULL);
   
   rolename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:User.role.roleName)
+  // @@protoc_insertion_point(field_set_char:User.Rqrole.roleName)
 }
-inline void role::set_rolename(const char* value, size_t size) {
+inline void Rqrole::set_rolename(const char* value, size_t size) {
   
   rolename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:User.role.roleName)
+  // @@protoc_insertion_point(field_set_pointer:User.Rqrole.roleName)
 }
-inline ::std::string* role::mutable_rolename() {
+inline ::std::string* Rqrole::mutable_rolename() {
   
-  // @@protoc_insertion_point(field_mutable:User.role.roleName)
+  // @@protoc_insertion_point(field_mutable:User.Rqrole.roleName)
   return rolename_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* role::release_rolename() {
-  // @@protoc_insertion_point(field_release:User.role.roleName)
+inline ::std::string* Rqrole::release_rolename() {
+  // @@protoc_insertion_point(field_release:User.Rqrole.roleName)
   
   return rolename_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void role::set_allocated_rolename(::std::string* rolename) {
+inline void Rqrole::set_allocated_rolename(::std::string* rolename) {
   if (rolename != NULL) {
     
   } else {
     
   }
   rolename_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), rolename);
-  // @@protoc_insertion_point(field_set_allocated:User.role.roleName)
+  // @@protoc_insertion_point(field_set_allocated:User.Rqrole.roleName)
 }
 
 // int32 exp = 2;
-inline void role::clear_exp() {
+inline void Rqrole::clear_exp() {
   exp_ = 0;
 }
-inline ::google::protobuf::int32 role::exp() const {
-  // @@protoc_insertion_point(field_get:User.role.exp)
+inline ::google::protobuf::int32 Rqrole::exp() const {
+  // @@protoc_insertion_point(field_get:User.Rqrole.exp)
   return exp_;
 }
-inline void role::set_exp(::google::protobuf::int32 value) {
+inline void Rqrole::set_exp(::google::protobuf::int32 value) {
   
   exp_ = value;
-  // @@protoc_insertion_point(field_set:User.role.exp)
+  // @@protoc_insertion_point(field_set:User.Rqrole.exp)
 }
 
 // int32 money = 3;
-inline void role::clear_money() {
+inline void Rqrole::clear_money() {
   money_ = 0;
 }
-inline ::google::protobuf::int32 role::money() const {
-  // @@protoc_insertion_point(field_get:User.role.money)
+inline ::google::protobuf::int32 Rqrole::money() const {
+  // @@protoc_insertion_point(field_get:User.Rqrole.money)
   return money_;
 }
-inline void role::set_money(::google::protobuf::int32 value) {
+inline void Rqrole::set_money(::google::protobuf::int32 value) {
   
   money_ = value;
-  // @@protoc_insertion_point(field_set:User.role.money)
+  // @@protoc_insertion_point(field_set:User.Rqrole.money)
 }
 
 // int32 level = 4;
-inline void role::clear_level() {
+inline void Rqrole::clear_level() {
   level_ = 0;
 }
-inline ::google::protobuf::int32 role::level() const {
-  // @@protoc_insertion_point(field_get:User.role.level)
+inline ::google::protobuf::int32 Rqrole::level() const {
+  // @@protoc_insertion_point(field_get:User.Rqrole.level)
   return level_;
 }
-inline void role::set_level(::google::protobuf::int32 value) {
+inline void Rqrole::set_level(::google::protobuf::int32 value) {
   
   level_ = value;
-  // @@protoc_insertion_point(field_set:User.role.level)
+  // @@protoc_insertion_point(field_set:User.Rqrole.level)
+}
+
+// -------------------------------------------------------------------
+
+// addrole
+
+// string roleName = 1;
+inline void addrole::clear_rolename() {
+  rolename_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& addrole::rolename() const {
+  // @@protoc_insertion_point(field_get:User.addrole.roleName)
+  return rolename_.GetNoArena();
+}
+inline void addrole::set_rolename(const ::std::string& value) {
+  
+  rolename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:User.addrole.roleName)
+}
+#if LANG_CXX11
+inline void addrole::set_rolename(::std::string&& value) {
+  
+  rolename_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:User.addrole.roleName)
+}
+#endif
+inline void addrole::set_rolename(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  rolename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:User.addrole.roleName)
+}
+inline void addrole::set_rolename(const char* value, size_t size) {
+  
+  rolename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:User.addrole.roleName)
+}
+inline ::std::string* addrole::mutable_rolename() {
+  
+  // @@protoc_insertion_point(field_mutable:User.addrole.roleName)
+  return rolename_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* addrole::release_rolename() {
+  // @@protoc_insertion_point(field_release:User.addrole.roleName)
+  
+  return rolename_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void addrole::set_allocated_rolename(::std::string* rolename) {
+  if (rolename != NULL) {
+    
+  } else {
+    
+  }
+  rolename_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), rolename);
+  // @@protoc_insertion_point(field_set_allocated:User.addrole.roleName)
+}
+
+// -------------------------------------------------------------------
+
+// rqcode
+
+// int32 code = 1;
+inline void rqcode::clear_code() {
+  code_ = 0;
+}
+inline ::google::protobuf::int32 rqcode::code() const {
+  // @@protoc_insertion_point(field_get:User.rqcode.code)
+  return code_;
+}
+inline void rqcode::set_code(::google::protobuf::int32 value) {
+  
+  code_ = value;
+  // @@protoc_insertion_point(field_set:User.rqcode.code)
 }
 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -55,7 +55,7 @@ add_executable(LoginServer main.cpp
         dbinteface/mysqlpool.h
         config.h
         base/MDatetime.cpp
-        )
+        Handler/roleHandler.cpp Handler/roleHandler.h dbinteface/dbrole.cpp dbinteface/dbrole.h Model/Role.cpp Model/Role.h Model/Role.cpp dbinteface/dbBase.h dbinteface/dbBase.cpp dbinteface/dbBase.h)
 target_link_libraries(LoginServer libmysqlpp.so)#会在lib路径找到
 
 target_link_libraries(LoginServer ${PROTOBUF_LIBRARIES})

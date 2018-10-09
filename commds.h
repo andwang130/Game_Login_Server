@@ -33,6 +33,7 @@ struct protocol_
         memcpy(&*new_string.begin(),&fin, sizeof(fin));
 
         index+= sizeof(fin);
+        //本机字节序转换网络字节序
         int bodySize=htobe32(data.size());
         memcpy(&*new_string.begin()+index,&bodySize, sizeof(bodySize));
         index+= sizeof(len);
@@ -51,25 +52,46 @@ struct protocol_
         memcpy(&*new_string.begin()+index,&*data.begin(),data.size());
 
         std::cout<<new_string.size()<<std::endl;
-        return new_string;
+        return std::move(new_string);
 
     }
 };
 
 namespace Login_model
 {
-   const  unsigned int level1=1;  //一级指令
+   const short level1=1;  //一级指令
 
     namespace  to_login
     {
-       const int level2=1; //二级指令
+       const short level2=1; //二级指令
 
        namespace coomd
        {
-           const int Login=1;  //三级
-           const int Register=2;
+           const int Login=1;  //三级 登录模块
+           const int Register=2;//注册模块
+
        }
     }
+}
+namespace role
+{
+    const short level1=2;
+    namespace roleinfo
+    {
+        const short level2=1;
+        namespace coomd
+        {
+            const int Getrole=1; //获得角色信息
+            const int Setrole=2;//修改角色信息
+
+            const int Addrole=3;//增加一个角色
+
+
+        }
+
+
+    }
+
 }
 
 #endif //LOGINSERVER_COMMDS_H
