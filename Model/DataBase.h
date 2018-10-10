@@ -11,11 +11,20 @@
 #include "User.h"
 #include "../commds.h"
 #include "Role.h"
+#include "Field.h"
 using namespace std;
-static mutex Mutex;
+
 typedef std::shared_ptr<MUser> prt_User;
 typedef std::shared_ptr<Role> prt_Role;
-static map<std::string,prt_User> UserMap;
-static map<CoonPrt,prt_User> Login_User;
+typedef std::shared_ptr<Field> prt_Filed;
 
+//extern声明全局对象,用static的话每个文件会有一个副本，静态变量一般用在类当中，供类函数使用
+extern mutex Mutex;
+extern map<CoonPrt,prt_User> Login_User;
+
+extern mutex roleMutex;
+extern map<CoonPrt,prt_Role> Login_role;
+
+extern mutex mathchingMutex;
+extern map<int,prt_Filed> Filedmap;
 #endif //LOGINSERVER_DATABSE_H

@@ -3,7 +3,7 @@
 //
 
 #include "dbrole.h"
-void  dbrole::getrole(int userid,Role role)
+void  dbrole::getrole(int userid,Role &role)
 {
 
     mysqlpp::Query query=coon->query("select * from Role where userid=%1");
@@ -27,13 +27,21 @@ void  dbrole::getrole(int userid,Role role)
 
 int dbrole::addrole(Role role)
 {
-    mysqlpp::Query query=coon->query("INSERT INTO Role(rolename, exp, money,createDate,userid) SELECT %1q, %2,%3,%4,%5 FROM dual WHERE not exists (select * from Role where Role.rolename = %6q)");
+//    roleid INT(4) NOT NULL AUTO_INCREMENT primary key,
+//    rolename VARCHAR(32) NOT NULL,
+//            exp INT NOT NULL,
+//            money INT NOT NULL,
+//            level INT NOT NULL,
+//            createDate DATETIME NOT NULL
+    mysqlpp::Query query=coon->query("INSERT INTO Role(rolename, exp, money,createDate,userid,level) SELECT %1q,%2,%3,%4q,%5,%6 FROM dual WHERE not exists (select * from Role where Role.rolename = %7q)");
     query.parse();
     query.template_defaults[1]=role.rolename_.c_str();
     query.template_defaults[2]=role.exp_;
     query.template_defaults[3]=role.money_;
     query.template_defaults[4]=Datetime::get_dateTime().c_str();
     query.template_defaults[5]=role.userid_;
+    query.template_defaults[6]=role.level_;
+    query.template_defaults[7]=role.rolename_.c_str();
     mysqlpp::SimpleResult result=query.execute();
     if(result)
     {

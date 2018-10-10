@@ -48,6 +48,8 @@ message addrole
 //-1失败
 //-2数据库错误
 //-3未登录
+//4匹配完成
+//5匹配中
 message rqcode
 {
     int32 code=1;

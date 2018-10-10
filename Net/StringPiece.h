@@ -62,14 +62,14 @@
                 : str_(str)
         { }
 
-        StringArg(const string& str)
+        StringArg(const std::string& str)
                 : str_(str.c_str())
         { }
 
 #ifndef MUDUO_STD_STRING
-        StringArg(const std::string& str)
-                : str_(str.c_str())
-        { }
+//        StringArg(const std::string& str)
+//                : str_(str.c_str())
+//        { }
 #endif
 
         const char* c_str() const { return str_; }
@@ -94,11 +94,11 @@
         StringPiece(const unsigned char* str)
                 : ptr_(reinterpret_cast<const char*>(str)),
                   length_(static_cast<int>(strlen(ptr_))) { }
-        StringPiece(const string& str)
-                : ptr_(str.data()), length_(static_cast<int>(str.size())) { }
-#ifndef MUDUO_STD_STRING
         StringPiece(const std::string& str)
                 : ptr_(str.data()), length_(static_cast<int>(str.size())) { }
+#ifndef MUDUO_STD_STRING
+//        StringPiece(const std::string& str)
+//                : ptr_(str.data()), length_(static_cast<int>(str.size())) { }
 #endif
         StringPiece(const char* offset, int len)
                 : ptr_(offset), length_(len) { }
@@ -165,11 +165,11 @@
             return r;
         }
 
-        string as_string() const {
-            return string(data(), size());
+        std::string as_string() const {
+            return std::string(data(), size());
         }
 
-        void CopyToString(string* target) const {
+        void CopyToString(std::string* target) const {
             target->assign(ptr_, length_);
         }
 

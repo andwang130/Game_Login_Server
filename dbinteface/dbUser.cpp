@@ -42,6 +42,6 @@ std::shared_ptr<MUser>  dbUser::get_User(string &name)
     }
     return std::make_shared<MUser>(mUser); //返回的是一个shared_ptr指针
 }
-}
+
 
 

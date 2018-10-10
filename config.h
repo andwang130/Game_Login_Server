@@ -16,7 +16,7 @@ static const char *pswd="WANGJING123";
 static const int max_size=10;
 
 
-static mysqlpp::ConnectionPool * mysqlPool =new MysqlPool(db,ip,user,pswd,port,max_size);
+extern mysqlpp::ConnectionPool * mysqlPool;
 
 
 

@@ -8,31 +8,22 @@
 #include <iostream>
 #include <memory>
 #include <map>
+#include "Role.h"
 #include "../commds.h"
 using  namespace std;
 
-class Player
-{
+typedef std::shared_ptr<Role> prt_Role;
 
-public:
-    Player(std::string rolename,std::string level,const CoonPrt coonPrt);
-    std::string get_rolename();
-    int get_level();
-    CoonPrt get_coonprt();
-private:
-    std::string rolename_;
-    int level_;
-    const CoonPrt coonPrt_;
-};
-typedef std::shared_ptr<Player> prtPlayer;
 class Field {
 public:
-    void addPlayer(const prtPlayer prt_player);
+    void addPlayer(const CoonPrt coonPrt,const prt_Role prt_role);
     void removePlauer(const CoonPrt coonPrt);
-private:
-    std::map<CoonPrt,prtPlayer> players_;
+    void setsize(int num);
+    std::map<CoonPrt,prt_Role> players_;
     bool state;
     int sizemax;
+    int nowNum;
+    int confirmedNum;
 
 };
 

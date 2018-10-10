@@ -99,8 +99,8 @@ namespace matching
         const short level2=1;
         namespace coomd
         {
-            const int play=1; //获得角色信息
-
+            const int play=1; //开始匹配
+            const int confirm=2;//确认匹配
 
         }
 

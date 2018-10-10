@@ -38,7 +38,7 @@ namespace protobuf_User_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[7];
+  static const ::google::protobuf::internal::ParseTable schema[8];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -64,6 +64,9 @@ extern RqroleDefaultTypeInternal _Rqrole_default_instance_;
 class addrole;
 class addroleDefaultTypeInternal;
 extern addroleDefaultTypeInternal _addrole_default_instance_;
+class matching;
+class matchingDefaultTypeInternal;
+extern matchingDefaultTypeInternal _matching_default_instance_;
 class rqcode;
 class rqcodeDefaultTypeInternal;
 extern rqcodeDefaultTypeInternal _rqcode_default_instance_;
@@ -76,6 +79,7 @@ template<> ::User::RqLogin* Arena::CreateMaybeMessage<::User::RqLogin>(Arena*);
 template<> ::User::RqRegister* Arena::CreateMaybeMessage<::User::RqRegister>(Arena*);
 template<> ::User::Rqrole* Arena::CreateMaybeMessage<::User::Rqrole>(Arena*);
 template<> ::User::addrole* Arena::CreateMaybeMessage<::User::addrole>(Arena*);
+template<> ::User::matching* Arena::CreateMaybeMessage<::User::matching>(Arena*);
 template<> ::User::rqcode* Arena::CreateMaybeMessage<::User::rqcode>(Arena*);
 }  // namespace protobuf
 }  // namespace google
@@ -915,6 +919,109 @@ class rqcode : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_User_2eproto::TableStruct;
 };
+// -------------------------------------------------------------------
+
+class matching : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:User.matching) */ {
+ public:
+  matching();
+  virtual ~matching();
+
+  matching(const matching& from);
+
+  inline matching& operator=(const matching& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  matching(matching&& from) noexcept
+    : matching() {
+    *this = ::std::move(from);
+  }
+
+  inline matching& operator=(matching&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const matching& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const matching* internal_default_instance() {
+    return reinterpret_cast<const matching*>(
+               &_matching_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  void Swap(matching* other);
+  friend void swap(matching& a, matching& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline matching* New() const final {
+    return CreateMaybeMessage<matching>(NULL);
+  }
+
+  matching* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<matching>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const matching& from);
+  void MergeFrom(const matching& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(matching* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // int32 peopleNum = 1;
+  void clear_peoplenum();
+  static const int kPeopleNumFieldNumber = 1;
+  ::google::protobuf::int32 peoplenum() const;
+  void set_peoplenum(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:User.matching)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::int32 peoplenum_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_User_2eproto::TableStruct;
+};
 // ===================================================================
 
 
@@ -1458,9 +1565,29 @@ inline void rqcode::set_code(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:User.rqcode.code)
 }
 
+// -------------------------------------------------------------------
+
+// matching
+
+// int32 peopleNum = 1;
+inline void matching::clear_peoplenum() {
+  peoplenum_ = 0;
+}
+inline ::google::protobuf::int32 matching::peoplenum() const {
+  // @@protoc_insertion_point(field_get:User.matching.peopleNum)
+  return peoplenum_;
+}
+inline void matching::set_peoplenum(::google::protobuf::int32 value) {
+  
+  peoplenum_ = value;
+  // @@protoc_insertion_point(field_set:User.matching.peopleNum)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

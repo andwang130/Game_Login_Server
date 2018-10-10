@@ -24,6 +24,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/LoginServer.dir/dbinteface/dbBase.cpp.o"
   "CMakeFiles/LoginServer.dir/Handler/matchingHandler.cpp.o"
   "CMakeFiles/LoginServer.dir/Model/Field.cpp.o"
+  "CMakeFiles/LoginServer.dir/Model/DataBase.cpp.o"
+  "CMakeFiles/LoginServer.dir/config.cpp.o"
   "LoginServer.pdb"
   "LoginServer"
 )
