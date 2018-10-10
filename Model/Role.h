@@ -11,12 +11,11 @@ class Role {
 public:
     Role(std::string rolename,int exp,int money,int level,int userid,int roleid);
     Role();
-    std::string roleName_;
+    std::string rolename_;
     int exp_;
     int money_;
     int level_;
     int userid_;
     int roleid_;
 };
-
 #endif //LOGINSERVER_ROLE_H

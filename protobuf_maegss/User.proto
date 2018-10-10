@@ -52,3 +52,9 @@ message rqcode
 {
     int32 code=1;
 }
+
+//开始匹配
+message matching
+{
+    int32 peopleNum=1;
+}

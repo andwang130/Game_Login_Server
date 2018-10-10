@@ -24,12 +24,16 @@ roleHandler::roleHandler(const CoonPrt coonPrt, protocol_ &aProtocol):BaseHandle
 
     }
 }
+//
 void roleHandler::setrole()
 {
 
 
 
 }
+
+
+//获得角色信息
 void roleHandler::getrole()
 {
     protocol_ newprotocol;
@@ -37,13 +41,30 @@ void roleHandler::getrole()
     newprotocol.fin=0;
     newprotocol.model=2;
     newprotocol.model2=1;
-    newprotocol.coomd=3;
+    newprotocol.coomd=1;
+
+    User::Rqrole rqrole;
+
     prt_User prt_user=login_ve();
+
+    Role role;
     if(prt_user!= nullptr)
     {
+        dbrole db_role;
+        db_role.getrole(prt_user->userid,role);
 
 
     }
+
+
+    rqrole.set_rolename(role.rolename_);
+    rqrole.set_exp(role.exp_);
+    rqrole.set_money(role.money_);
+    rqrole.set_level(role.level_);
+
+    newprotocol.data=rqrole.SerializeAsString();
+    std::string buf=newprotocol.get_byte();
+    coonPrt_->sendloop(buf);
 
 
 
@@ -58,14 +79,14 @@ void roleHandler::addrole()
     newprotocol.fin=0;
     newprotocol.model=2;
     newprotocol.model2=1;
-    newprotocol.coomd=1;
+    newprotocol.coomd=3;
 
     prt_User prt_user=login_ve();
     User::addrole add_role;
     Role role;
     add_role.ParseFromString(aProtocol_.data);
 
-    role.roleName_=add_role.rolename();
+    role.rolename_=add_role.rolename();
     role.userid_=prt_user->userid;
 
     User::rqcode rq_code;

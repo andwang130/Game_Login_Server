@@ -86,12 +86,25 @@ namespace role
 
             const int Addrole=3;//增加一个角色
 
-
         }
-
 
     }
 
+}
+namespace matching
+{
+    const short level1=3;
+    namespace matching_
+    {
+        const short level2=1;
+        namespace coomd
+        {
+            const int play=1; //获得角色信息
+
+
+        }
+
+    }
 }
 
 #endif //LOGINSERVER_COMMDS_H

@@ -11,6 +11,7 @@
 #include "Net/Tcpcoonetion.h"
 #include "Handler/LoginHandler.h"
 #include "Handler/roleHandler.h"
+#include "Handler/matchingHandler.h"
 using namespace ZL;
 using namespace ZL::Net;
 inline void intermeadiary(const TcpcoontionPrt connprt,protocol_ &aProtocol_)
@@ -26,6 +27,10 @@ inline void intermeadiary(const TcpcoontionPrt connprt,protocol_ &aProtocol_)
         {
             roleHandler roleHandler1(connprt,aProtocol_);
             break;
+        }
+        case matching::level1:
+        {
+            matchingHandler matchingHandler_(connprt,aProtocol_);
         }
 
 

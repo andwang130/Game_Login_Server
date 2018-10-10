@@ -10,7 +10,7 @@
 class dbrole: public dbBase {
 public:
     Role getrole();
-    Role getrole(int userid);
+    void getrole(int userid,Role role);
     int addrole(Role role);
 private:
 };

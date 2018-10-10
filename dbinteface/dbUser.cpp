@@ -39,9 +39,9 @@ std::shared_ptr<MUser>  dbUser::get_User(string &name)
         mUser.email_=result[0]["email"].c_str();
         mUser.phone_=result[0]["phone"].c_str();
         mUser.userid=result[0]["userid"];
-        std::make_shared<MUser>(mUser);  //返回的是一个shared_ptr指针
     }
-    return std::make_shared<MUser>(mUser);
+    return std::make_shared<MUser>(mUser); //返回的是一个shared_ptr指针
+}
 }
 
 

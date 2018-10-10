@@ -3,7 +3,7 @@
 //
 #include "Role.h"
 Role::Role(std::string rolename, int exp, int money, int level,int userid,int roleid):
-roleName_(rolename),
+rolename_(rolename),
 exp_(exp),
 money_(money),
 level_(level),
@@ -15,7 +15,7 @@ roleid_(roleid)
 
 Role::Role()
 {
-    roleName_="";
+    rolename_="";
     exp_=0;
     money_=0;
     level_=0;
