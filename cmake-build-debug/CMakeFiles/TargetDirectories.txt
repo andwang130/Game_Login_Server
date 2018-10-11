@@ -1,3 +1,0 @@
-/home/wj_de/Game_Login_Server/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/wj_de/Game_Login_Server/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/wj_de/Game_Login_Server/cmake-build-debug/CMakeFiles/LoginServer.dir

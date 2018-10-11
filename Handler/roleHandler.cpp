@@ -91,7 +91,7 @@ void roleHandler::addrole()
 
 
     User::rqcode rq_code;
-    cout<<"addrole"<<coonPrt_->get_name()<<endl;    if(prt_user!= nullptr)
+    if(prt_user!= nullptr)
     {
         Role role;
 

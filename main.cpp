@@ -48,14 +48,14 @@ private:
     {
         protocol_ aProtocol;
         if(buffer->readableBytes()>=13)
-        {   cout<<"收到消息"<<endl;
+        {
             int8_t types=buffer->readInt8();
             int32_t len=buffer->readInt32();
             aProtocol.model=buffer->readInt16();
             aProtocol.model2=buffer->readInt16();
             aProtocol.coomd=buffer->readInt32();
-            cout<<len<<endl;
-            cout<<buffer->readableBytes()<<endl;
+            cout<<"body长度"<<len<<endl;
+            cout<<"缓存区长度"<<buffer->readableBytes()<<endl;
             if(buffer->readableBytes()>=len)
             {
 
