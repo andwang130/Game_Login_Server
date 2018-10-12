@@ -21,11 +21,13 @@ void matchingHandler::playmatching()
     User::matching matching_;
     matching_.ParseFromString(aProtocol_.data);
     int num=matching_.peoplenum();
+    cout<<"num:"<<num<<endl;
     std::lock_guard<mutex> lk(mathchingMutex);
     if(Filedmap.empty())
     {
 
         Field field;
+        field.nowNum=1;
         field.setsize(num);
         {
             std::lock_guard<mutex> lk(roleMutex);
