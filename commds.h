@@ -51,7 +51,6 @@ struct protocol_
         index+= sizeof(coomd);
         memcpy(&*new_string.begin()+index,&*data.begin(),data.size());
 
-        std::cout<<new_string.size()<<std::endl;
         return std::move(new_string);
 
     }

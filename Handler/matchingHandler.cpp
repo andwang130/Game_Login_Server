@@ -29,7 +29,6 @@ void matchingHandler::playmatching()
     User::matching matching_;
     matching_.ParseFromString(aProtocol_.data);
     int num=matching_.peoplenum();
-    cout<<"num:"<<num<<endl;
     std::lock_guard<mutex> lk(mathchingMutex);
     if(Filedmap.empty())
     {
@@ -83,8 +82,13 @@ void matchingHandler::confirm()
         std::lock_guard<mutex> lk(roleMutex);
         fieldid = Login_role.find(coonPrt_)->second->Fieldid_;
     }
-    prt_Filed_=Filedmap.find(fieldid)->second;
+    auto ite=Filedmap.find(fieldid);
 
+    if(ite==Filedmap.end())
+    {
+        return;
+    }
+    prt_Filed_=ite->second;
     prt_Filed_->confirmedNum++;
 
     if(prt_Filed_->confirmedNum==prt_Filed_->sizemax)
@@ -113,6 +117,7 @@ void matchingHandler::create_field(int num)
 
     Field field;
     field.nowNum=1;
+    field.confirmedNum=0;
     field.setsize(num);
     {
         std::lock_guard<mutex> lk(roleMutex);
@@ -128,6 +133,7 @@ void matchingHandler::create_field(int num)
 void waitmatching(int fieldid)
 {
 
+    cout<<"关闭一个房间"<<endl;
     std::lock_guard<std::mutex> lk(mathchingMutex);
     auto field=Filedmap.find(fieldid)->second;
     if(field->confirmedNum!=field->sizemax)
@@ -170,11 +176,14 @@ void matchingHandler::completion(int fieldID)
     }
     TimeQueue *timeQueue=TimeQueue::getTimeQueue();
     itimerspec itimerspec_;
+
     itimerspec_.it_value.tv_sec=30;
     itimerspec_.it_value.tv_nsec=0;
-
+    itimerspec_.it_interval.tv_nsec=0;
+    itimerspec_.it_interval.tv_sec=0;
     //定时任务30秒后执行
     Timer timer(std::bind(waitmatching,fieldID),itimerspec_,0);
+    timeQueue->addTimer(std::make_shared<Timer>(timer));
 }
 
 void matchingHandler::entering(int fieldID)

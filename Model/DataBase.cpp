@@ -30,8 +30,18 @@ void removeFiledmap(const CoonPrt &coonPrt)
 {
     auto role=Login_role.find(coonPrt);
     int fieldid=role->second->Fieldid_;
-    auto field=Filedmap.find(fieldid)->second;
-    field->players_.erase(coonPrt);
+    auto field=Filedmap.find(fieldid);
+    if(field==Filedmap.end())
+    {
+        return;
+    }
+    auto prt_Filed=field->second;
+    prt_Filed->players_.erase(coonPrt);
+    prt_Filed->nowNum--;
+    if(prt_Filed->nowNum==0)
+    {
+        Filedmap.erase(fieldid);
+    }
 
 }
 
