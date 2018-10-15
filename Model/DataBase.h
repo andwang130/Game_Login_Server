@@ -28,9 +28,11 @@ extern map<CoonPrt,prt_Role> Login_role;
 extern mutex mathchingMutex;
 extern map<int,prt_Filed> Filedmap;
 
-void removeFiledmap(CoonPrt coonPrt);
+extern void baseRemove(const CoonPrt &coonPrt);
 
-void removeLogin_role(CoonPrt coonPrt);
+extern void removeFiledmap(const CoonPrt &coonPrt);
 
-void removeLogin_User(CoonPrt coonPrt);
+extern void removeLogin_role(const CoonPrt &coonPrt);
+
+extern void removeLogin_User(const CoonPrt &coonPrt);
 #endif //LOGINSERVER_DATABSE_H

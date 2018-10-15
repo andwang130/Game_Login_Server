@@ -50,6 +50,8 @@ message addrole
 //-3未登录
 //4匹配完成
 //5匹配中
+//6匹配取消
+//7匹配确认完成
 message rqcode
 {
     int32 code=1;
@@ -59,4 +61,5 @@ message rqcode
 message matching
 {
     int32 peopleNum=1;
+
 }

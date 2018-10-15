@@ -21,4 +21,5 @@ Role::Role()
     level_=0;
     userid_=0;
     roleid_=0;
+    Fieldid_=0;
 }

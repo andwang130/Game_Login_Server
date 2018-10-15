@@ -20,10 +20,10 @@ public:
     void removePlauer(const CoonPrt coonPrt);
     void setsize(int num);
     std::map<CoonPrt,prt_Role> players_;
-    bool state;
-    int sizemax;
-    int nowNum;
-    int confirmedNum;
+    bool state;  //状态
+    int sizemax; //最大人数
+    int nowNum; //当前人数
+    int confirmedNum; //确任的人数
 
 };
 

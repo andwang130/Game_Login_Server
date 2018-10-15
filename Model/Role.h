@@ -17,5 +17,6 @@ public:
     int level_;
     int userid_;
     int roleid_;
+    int Fieldid_;
 };
 #endif //LOGINSERVER_ROLE_H

@@ -31,11 +31,7 @@ private:
     //断开连接回调函数
     void on_removeCallback(const TcpcoontionPrt &coon)
     {
-        std::lock_guard<mutex> lk(Mutex);
-        if(Login_User.find(coon)!=Login_User.end())
-        {
-            Login_User.erase(coon);
-        }
+        baseRemove(coon);
         std::cout<<coon->get_name()<<"下线了"<<std::endl;
     }
     //建立连接回调函数

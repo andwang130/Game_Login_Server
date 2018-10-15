@@ -14,8 +14,13 @@ class matchingHandler: BaseHandler {
 public:
     matchingHandler(const CoonPrt coonPrt, protocol_ &aProtocol);
 private:
+    void create_field(int num);
     //开始匹配
     void playmatching();
+
+    //确任匹配
+    void confirm();
+
     //匹配完成
     void completion(int fieldID);
 
