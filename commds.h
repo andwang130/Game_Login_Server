@@ -106,4 +106,38 @@ namespace matching
     }
 }
 
+//选择英雄模块
+namespace selecthore
+{
+    const short level1=4;
+    namespace select
+    {
+        const short level2=1;
+        namespace coomd
+        {
+
+            const int into=1;//进入房间
+            const int getroom=2;//获取房间信息
+            const int cilck=3; //点击了一个英雄
+            const int select=4;//选择一个英雄
+        }
+
+    }
+}
+//聊天模块
+namespace talk
+{
+    const short level1=5;
+    namespace matching_
+    {
+        const short level2=1;
+        namespace coomd
+        {
+            const int send=1;//发送聊天信息
+        }
+
+    }
+}
+
+
 #endif //LOGINSERVER_COMMDS_H

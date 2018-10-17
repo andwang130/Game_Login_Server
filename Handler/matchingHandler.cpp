@@ -80,7 +80,12 @@ void matchingHandler::confirm()
     prt_Filed prt_Filed_;
     {
         std::lock_guard<mutex> lk(roleMutex);
-        fieldid = Login_role.find(coonPrt_)->second->Fieldid_;
+        auto role=Login_role.find(coonPrt_);
+        if(role==Login_role.end())
+        {
+            return;
+        }
+        fieldid = role->second->Fieldid_;
     }
     auto ite=Filedmap.find(fieldid);
 
@@ -153,7 +158,10 @@ void waitmatching(int fieldid)
             ite.first->sendloop(byte);
         }
     }
-    Filedmap.erase(fieldid);
+
+        Filedmap.erase(fieldid);
+
+
 
 }
 void matchingHandler::completion(int fieldID)

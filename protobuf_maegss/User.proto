@@ -63,3 +63,22 @@ message matching
     int32 peopleNum=1;
 
 }
+
+//房间角色信息
+message role_hore
+{
+    string roleName=1;
+    int32 exp=2;
+    int32 money=3;
+    int32 level=4;
+    bool  ready=5; // 是否准备
+    int32 heroid=6;  //选择英雄
+}
+//返回房间信息
+message roominfo
+{
+repeated role_hore role_list=1;
+
+}
+
+
