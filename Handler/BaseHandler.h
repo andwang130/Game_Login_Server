@@ -17,6 +17,9 @@ protected:
 
     const CoonPrt coonPrt_;
     protocol_ aProtocol_;
+    void tosend(int mode1,int mode2,int coomd,std::string &data);
+    void tosend(int mode1,int mode2,int coomd,std::string &data,const CoonPrt &coonPrt);
+    void protoc(int mode1, int mode2, int coomd, std::string &data,std::string &buf);
 };
 
 

@@ -107,10 +107,31 @@ void matchingHandler::confirm()
         newprotocol.coomd=1;
         newprotocol.data=rqcode_.SerializeAsString();
         std::string byte=newprotocol.get_byte();
-        for(auto ite:prt_Filed_->players_)
-        {
 
-            ite.first->sendloop(byte);
+
+        {
+            std::lock_guard<std::mutex> lk(roomMutex);
+            Room room;
+            int ranks=1;
+            int index=1;
+            for (auto ite:prt_Filed_->players_)
+            {
+
+                Play play;
+                play.index=(ranks-1)*5+index;
+                play.Ranks=ranks;
+                play.name=ite.second->rolename_;
+                index++;
+                if(index%prt_Filed_->sizemax==0)
+                {
+                    ranks++;
+                    index=1;
+                }
+                room.plays_[coonPrt_] = std::make_shared<Play>(play);
+                ite.first->sendloop(byte);
+            }
+            //创建一个房间
+            roommap[ite->first]=std::make_shared<Room>(room);
         }
     }
 
@@ -175,12 +196,22 @@ void matchingHandler::completion(int fieldID)
     User::rqcode rqcode_;
     rqcode_.set_code(4);
     newprotocol.data=rqcode_.SerializeAsString();
-   std::string buf=newprotocol.get_byte();
+    std::string buf=newprotocol.get_byte();
     auto ite=Filedmap.find(fieldID);
-    for(auto new_ite:ite->second->players_)
+
     {
-        //通知该房间的用户完成匹配开始确认
-        new_ite.first->sendloop(buf);
+        std::lock_guard<std::mutex> lk(roomMutex);
+        Room room;
+
+        for (auto new_ite:ite->second->players_) {
+            Play play;
+            room.plays_[coonPrt_] = std::make_shared<Play>(play);
+            //通知该房间的用户完成匹配开始确认
+            new_ite.first->sendloop(buf);
+        }
+
+        //创建一个房间
+        roommap[ite->first]=std::make_shared<Room>(room);
     }
     TimeQueue *timeQueue=TimeQueue::getTimeQueue();
     itimerspec itimerspec_;

@@ -5,17 +5,17 @@
 #ifndef LOGINSERVER_ROOM_H
 #define LOGINSERVER_ROOM_H
 
-#include <bits/shared_ptr.h>
 #include "Play.h"
 #include "../commds.h"
-
+#include "../base/timeQueue/TimeQueue.h"
 typedef std::shared_ptr<Play> play_prt;
+typedef std::shared_ptr<Timer> timer_prt;
 class Room
 {
 public:
-    int id;
     std::map<CoonPrt,play_prt> plays_;
-
+    int ready_num;
+    timer_prt  room_timer;
 
 };
 

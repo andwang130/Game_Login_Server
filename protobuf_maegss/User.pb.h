@@ -38,7 +38,7 @@ namespace protobuf_User_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[8];
+  static const ::google::protobuf::internal::ParseTable schema[13];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -64,12 +64,27 @@ extern RqroleDefaultTypeInternal _Rqrole_default_instance_;
 class addrole;
 class addroleDefaultTypeInternal;
 extern addroleDefaultTypeInternal _addrole_default_instance_;
+class cilck_hero;
+class cilck_heroDefaultTypeInternal;
+extern cilck_heroDefaultTypeInternal _cilck_hero_default_instance_;
 class matching;
 class matchingDefaultTypeInternal;
 extern matchingDefaultTypeInternal _matching_default_instance_;
+class role_hore;
+class role_horeDefaultTypeInternal;
+extern role_horeDefaultTypeInternal _role_hore_default_instance_;
+class room_id;
+class room_idDefaultTypeInternal;
+extern room_idDefaultTypeInternal _room_id_default_instance_;
+class roominfo;
+class roominfoDefaultTypeInternal;
+extern roominfoDefaultTypeInternal _roominfo_default_instance_;
 class rqcode;
 class rqcodeDefaultTypeInternal;
 extern rqcodeDefaultTypeInternal _rqcode_default_instance_;
+class to_room;
+class to_roomDefaultTypeInternal;
+extern to_roomDefaultTypeInternal _to_room_default_instance_;
 }  // namespace User
 namespace google {
 namespace protobuf {
@@ -79,8 +94,13 @@ template<> ::User::RqLogin* Arena::CreateMaybeMessage<::User::RqLogin>(Arena*);
 template<> ::User::RqRegister* Arena::CreateMaybeMessage<::User::RqRegister>(Arena*);
 template<> ::User::Rqrole* Arena::CreateMaybeMessage<::User::Rqrole>(Arena*);
 template<> ::User::addrole* Arena::CreateMaybeMessage<::User::addrole>(Arena*);
+template<> ::User::cilck_hero* Arena::CreateMaybeMessage<::User::cilck_hero>(Arena*);
 template<> ::User::matching* Arena::CreateMaybeMessage<::User::matching>(Arena*);
+template<> ::User::role_hore* Arena::CreateMaybeMessage<::User::role_hore>(Arena*);
+template<> ::User::room_id* Arena::CreateMaybeMessage<::User::room_id>(Arena*);
+template<> ::User::roominfo* Arena::CreateMaybeMessage<::User::roominfo>(Arena*);
 template<> ::User::rqcode* Arena::CreateMaybeMessage<::User::rqcode>(Arena*);
+template<> ::User::to_room* Arena::CreateMaybeMessage<::User::to_room>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace User {
@@ -921,6 +941,109 @@ class rqcode : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
 };
 // -------------------------------------------------------------------
 
+class room_id : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:User.room_id) */ {
+ public:
+  room_id();
+  virtual ~room_id();
+
+  room_id(const room_id& from);
+
+  inline room_id& operator=(const room_id& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  room_id(room_id&& from) noexcept
+    : room_id() {
+    *this = ::std::move(from);
+  }
+
+  inline room_id& operator=(room_id&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const room_id& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const room_id* internal_default_instance() {
+    return reinterpret_cast<const room_id*>(
+               &_room_id_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  void Swap(room_id* other);
+  friend void swap(room_id& a, room_id& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline room_id* New() const final {
+    return CreateMaybeMessage<room_id>(NULL);
+  }
+
+  room_id* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<room_id>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const room_id& from);
+  void MergeFrom(const room_id& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(room_id* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // int32 id = 1;
+  void clear_id();
+  static const int kIdFieldNumber = 1;
+  ::google::protobuf::int32 id() const;
+  void set_id(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:User.room_id)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::int32 id_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_User_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
 class matching : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:User.matching) */ {
  public:
   matching();
@@ -956,7 +1079,7 @@ class matching : public ::google::protobuf::Message /* @@protoc_insertion_point(
                &_matching_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   void Swap(matching* other);
   friend void swap(matching& a, matching& b) {
@@ -1019,6 +1142,474 @@ class matching : public ::google::protobuf::Message /* @@protoc_insertion_point(
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::int32 peoplenum_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_User_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class to_room : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:User.to_room) */ {
+ public:
+  to_room();
+  virtual ~to_room();
+
+  to_room(const to_room& from);
+
+  inline to_room& operator=(const to_room& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  to_room(to_room&& from) noexcept
+    : to_room() {
+    *this = ::std::move(from);
+  }
+
+  inline to_room& operator=(to_room&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const to_room& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const to_room* internal_default_instance() {
+    return reinterpret_cast<const to_room*>(
+               &_to_room_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    9;
+
+  void Swap(to_room* other);
+  friend void swap(to_room& a, to_room& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline to_room* New() const final {
+    return CreateMaybeMessage<to_room>(NULL);
+  }
+
+  to_room* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<to_room>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const to_room& from);
+  void MergeFrom(const to_room& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(to_room* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // int32 room_id = 1;
+  void clear_room_id();
+  static const int kRoomIdFieldNumber = 1;
+  ::google::protobuf::int32 room_id() const;
+  void set_room_id(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:User.to_room)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::int32 room_id_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_User_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class cilck_hero : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:User.cilck_hero) */ {
+ public:
+  cilck_hero();
+  virtual ~cilck_hero();
+
+  cilck_hero(const cilck_hero& from);
+
+  inline cilck_hero& operator=(const cilck_hero& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  cilck_hero(cilck_hero&& from) noexcept
+    : cilck_hero() {
+    *this = ::std::move(from);
+  }
+
+  inline cilck_hero& operator=(cilck_hero&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const cilck_hero& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const cilck_hero* internal_default_instance() {
+    return reinterpret_cast<const cilck_hero*>(
+               &_cilck_hero_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  void Swap(cilck_hero* other);
+  friend void swap(cilck_hero& a, cilck_hero& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline cilck_hero* New() const final {
+    return CreateMaybeMessage<cilck_hero>(NULL);
+  }
+
+  cilck_hero* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<cilck_hero>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const cilck_hero& from);
+  void MergeFrom(const cilck_hero& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(cilck_hero* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // int32 room_id = 1;
+  void clear_room_id();
+  static const int kRoomIdFieldNumber = 1;
+  ::google::protobuf::int32 room_id() const;
+  void set_room_id(::google::protobuf::int32 value);
+
+  // int32 heroid = 2;
+  void clear_heroid();
+  static const int kHeroidFieldNumber = 2;
+  ::google::protobuf::int32 heroid() const;
+  void set_heroid(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:User.cilck_hero)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::int32 room_id_;
+  ::google::protobuf::int32 heroid_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_User_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class role_hore : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:User.role_hore) */ {
+ public:
+  role_hore();
+  virtual ~role_hore();
+
+  role_hore(const role_hore& from);
+
+  inline role_hore& operator=(const role_hore& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  role_hore(role_hore&& from) noexcept
+    : role_hore() {
+    *this = ::std::move(from);
+  }
+
+  inline role_hore& operator=(role_hore&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const role_hore& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const role_hore* internal_default_instance() {
+    return reinterpret_cast<const role_hore*>(
+               &_role_hore_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  void Swap(role_hore* other);
+  friend void swap(role_hore& a, role_hore& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline role_hore* New() const final {
+    return CreateMaybeMessage<role_hore>(NULL);
+  }
+
+  role_hore* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<role_hore>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const role_hore& from);
+  void MergeFrom(const role_hore& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(role_hore* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string roleName = 1;
+  void clear_rolename();
+  static const int kRoleNameFieldNumber = 1;
+  const ::std::string& rolename() const;
+  void set_rolename(const ::std::string& value);
+  #if LANG_CXX11
+  void set_rolename(::std::string&& value);
+  #endif
+  void set_rolename(const char* value);
+  void set_rolename(const char* value, size_t size);
+  ::std::string* mutable_rolename();
+  ::std::string* release_rolename();
+  void set_allocated_rolename(::std::string* rolename);
+
+  // int32 cilckhero = 2;
+  void clear_cilckhero();
+  static const int kCilckheroFieldNumber = 2;
+  ::google::protobuf::int32 cilckhero() const;
+  void set_cilckhero(::google::protobuf::int32 value);
+
+  // int32 ranks = 3;
+  void clear_ranks();
+  static const int kRanksFieldNumber = 3;
+  ::google::protobuf::int32 ranks() const;
+  void set_ranks(::google::protobuf::int32 value);
+
+  // int32 index = 4;
+  void clear_index();
+  static const int kIndexFieldNumber = 4;
+  ::google::protobuf::int32 index() const;
+  void set_index(::google::protobuf::int32 value);
+
+  // int32 heroid = 5;
+  void clear_heroid();
+  static const int kHeroidFieldNumber = 5;
+  ::google::protobuf::int32 heroid() const;
+  void set_heroid(::google::protobuf::int32 value);
+
+  // bool toroom = 6;
+  void clear_toroom();
+  static const int kToroomFieldNumber = 6;
+  bool toroom() const;
+  void set_toroom(bool value);
+
+  // @@protoc_insertion_point(class_scope:User.role_hore)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr rolename_;
+  ::google::protobuf::int32 cilckhero_;
+  ::google::protobuf::int32 ranks_;
+  ::google::protobuf::int32 index_;
+  ::google::protobuf::int32 heroid_;
+  bool toroom_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_User_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class roominfo : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:User.roominfo) */ {
+ public:
+  roominfo();
+  virtual ~roominfo();
+
+  roominfo(const roominfo& from);
+
+  inline roominfo& operator=(const roominfo& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  roominfo(roominfo&& from) noexcept
+    : roominfo() {
+    *this = ::std::move(from);
+  }
+
+  inline roominfo& operator=(roominfo&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const roominfo& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const roominfo* internal_default_instance() {
+    return reinterpret_cast<const roominfo*>(
+               &_roominfo_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  void Swap(roominfo* other);
+  friend void swap(roominfo& a, roominfo& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline roominfo* New() const final {
+    return CreateMaybeMessage<roominfo>(NULL);
+  }
+
+  roominfo* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<roominfo>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const roominfo& from);
+  void MergeFrom(const roominfo& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(roominfo* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .User.role_hore role_list = 1;
+  int role_list_size() const;
+  void clear_role_list();
+  static const int kRoleListFieldNumber = 1;
+  ::User::role_hore* mutable_role_list(int index);
+  ::google::protobuf::RepeatedPtrField< ::User::role_hore >*
+      mutable_role_list();
+  const ::User::role_hore& role_list(int index) const;
+  ::User::role_hore* add_role_list();
+  const ::google::protobuf::RepeatedPtrField< ::User::role_hore >&
+      role_list() const;
+
+  // @@protoc_insertion_point(class_scope:User.roominfo)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::User::role_hore > role_list_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_User_2eproto::TableStruct;
 };
@@ -1567,6 +2158,24 @@ inline void rqcode::set_code(::google::protobuf::int32 value) {
 
 // -------------------------------------------------------------------
 
+// room_id
+
+// int32 id = 1;
+inline void room_id::clear_id() {
+  id_ = 0;
+}
+inline ::google::protobuf::int32 room_id::id() const {
+  // @@protoc_insertion_point(field_get:User.room_id.id)
+  return id_;
+}
+inline void room_id::set_id(::google::protobuf::int32 value) {
+  
+  id_ = value;
+  // @@protoc_insertion_point(field_set:User.room_id.id)
+}
+
+// -------------------------------------------------------------------
+
 // matching
 
 // int32 peopleNum = 1;
@@ -1583,9 +2192,230 @@ inline void matching::set_peoplenum(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:User.matching.peopleNum)
 }
 
+// -------------------------------------------------------------------
+
+// to_room
+
+// int32 room_id = 1;
+inline void to_room::clear_room_id() {
+  room_id_ = 0;
+}
+inline ::google::protobuf::int32 to_room::room_id() const {
+  // @@protoc_insertion_point(field_get:User.to_room.room_id)
+  return room_id_;
+}
+inline void to_room::set_room_id(::google::protobuf::int32 value) {
+  
+  room_id_ = value;
+  // @@protoc_insertion_point(field_set:User.to_room.room_id)
+}
+
+// -------------------------------------------------------------------
+
+// cilck_hero
+
+// int32 room_id = 1;
+inline void cilck_hero::clear_room_id() {
+  room_id_ = 0;
+}
+inline ::google::protobuf::int32 cilck_hero::room_id() const {
+  // @@protoc_insertion_point(field_get:User.cilck_hero.room_id)
+  return room_id_;
+}
+inline void cilck_hero::set_room_id(::google::protobuf::int32 value) {
+  
+  room_id_ = value;
+  // @@protoc_insertion_point(field_set:User.cilck_hero.room_id)
+}
+
+// int32 heroid = 2;
+inline void cilck_hero::clear_heroid() {
+  heroid_ = 0;
+}
+inline ::google::protobuf::int32 cilck_hero::heroid() const {
+  // @@protoc_insertion_point(field_get:User.cilck_hero.heroid)
+  return heroid_;
+}
+inline void cilck_hero::set_heroid(::google::protobuf::int32 value) {
+  
+  heroid_ = value;
+  // @@protoc_insertion_point(field_set:User.cilck_hero.heroid)
+}
+
+// -------------------------------------------------------------------
+
+// role_hore
+
+// string roleName = 1;
+inline void role_hore::clear_rolename() {
+  rolename_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& role_hore::rolename() const {
+  // @@protoc_insertion_point(field_get:User.role_hore.roleName)
+  return rolename_.GetNoArena();
+}
+inline void role_hore::set_rolename(const ::std::string& value) {
+  
+  rolename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:User.role_hore.roleName)
+}
+#if LANG_CXX11
+inline void role_hore::set_rolename(::std::string&& value) {
+  
+  rolename_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:User.role_hore.roleName)
+}
+#endif
+inline void role_hore::set_rolename(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  rolename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:User.role_hore.roleName)
+}
+inline void role_hore::set_rolename(const char* value, size_t size) {
+  
+  rolename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:User.role_hore.roleName)
+}
+inline ::std::string* role_hore::mutable_rolename() {
+  
+  // @@protoc_insertion_point(field_mutable:User.role_hore.roleName)
+  return rolename_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* role_hore::release_rolename() {
+  // @@protoc_insertion_point(field_release:User.role_hore.roleName)
+  
+  return rolename_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void role_hore::set_allocated_rolename(::std::string* rolename) {
+  if (rolename != NULL) {
+    
+  } else {
+    
+  }
+  rolename_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), rolename);
+  // @@protoc_insertion_point(field_set_allocated:User.role_hore.roleName)
+}
+
+// int32 cilckhero = 2;
+inline void role_hore::clear_cilckhero() {
+  cilckhero_ = 0;
+}
+inline ::google::protobuf::int32 role_hore::cilckhero() const {
+  // @@protoc_insertion_point(field_get:User.role_hore.cilckhero)
+  return cilckhero_;
+}
+inline void role_hore::set_cilckhero(::google::protobuf::int32 value) {
+  
+  cilckhero_ = value;
+  // @@protoc_insertion_point(field_set:User.role_hore.cilckhero)
+}
+
+// int32 ranks = 3;
+inline void role_hore::clear_ranks() {
+  ranks_ = 0;
+}
+inline ::google::protobuf::int32 role_hore::ranks() const {
+  // @@protoc_insertion_point(field_get:User.role_hore.ranks)
+  return ranks_;
+}
+inline void role_hore::set_ranks(::google::protobuf::int32 value) {
+  
+  ranks_ = value;
+  // @@protoc_insertion_point(field_set:User.role_hore.ranks)
+}
+
+// int32 index = 4;
+inline void role_hore::clear_index() {
+  index_ = 0;
+}
+inline ::google::protobuf::int32 role_hore::index() const {
+  // @@protoc_insertion_point(field_get:User.role_hore.index)
+  return index_;
+}
+inline void role_hore::set_index(::google::protobuf::int32 value) {
+  
+  index_ = value;
+  // @@protoc_insertion_point(field_set:User.role_hore.index)
+}
+
+// int32 heroid = 5;
+inline void role_hore::clear_heroid() {
+  heroid_ = 0;
+}
+inline ::google::protobuf::int32 role_hore::heroid() const {
+  // @@protoc_insertion_point(field_get:User.role_hore.heroid)
+  return heroid_;
+}
+inline void role_hore::set_heroid(::google::protobuf::int32 value) {
+  
+  heroid_ = value;
+  // @@protoc_insertion_point(field_set:User.role_hore.heroid)
+}
+
+// bool toroom = 6;
+inline void role_hore::clear_toroom() {
+  toroom_ = false;
+}
+inline bool role_hore::toroom() const {
+  // @@protoc_insertion_point(field_get:User.role_hore.toroom)
+  return toroom_;
+}
+inline void role_hore::set_toroom(bool value) {
+  
+  toroom_ = value;
+  // @@protoc_insertion_point(field_set:User.role_hore.toroom)
+}
+
+// -------------------------------------------------------------------
+
+// roominfo
+
+// repeated .User.role_hore role_list = 1;
+inline int roominfo::role_list_size() const {
+  return role_list_.size();
+}
+inline void roominfo::clear_role_list() {
+  role_list_.Clear();
+}
+inline ::User::role_hore* roominfo::mutable_role_list(int index) {
+  // @@protoc_insertion_point(field_mutable:User.roominfo.role_list)
+  return role_list_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::User::role_hore >*
+roominfo::mutable_role_list() {
+  // @@protoc_insertion_point(field_mutable_list:User.roominfo.role_list)
+  return &role_list_;
+}
+inline const ::User::role_hore& roominfo::role_list(int index) const {
+  // @@protoc_insertion_point(field_get:User.roominfo.role_list)
+  return role_list_.Get(index);
+}
+inline ::User::role_hore* roominfo::add_role_list() {
+  // @@protoc_insertion_point(field_add:User.roominfo.role_list)
+  return role_list_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::User::role_hore >&
+roominfo::role_list() const {
+  // @@protoc_insertion_point(field_list:User.roominfo.role_list)
+  return role_list_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

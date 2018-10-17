@@ -11,6 +11,11 @@ map<CoonPrt,prt_Role> Login_role;
 mutex mathchingMutex;
 map<int,prt_Filed> Filedmap;
 
+
+mutex roomMutex;
+map<int,prt_room> roommap;
+
+
 void baseRemove(const CoonPrt &coonPrt)
 {
 std::lock_guard<std::mutex> lk(mathchingMutex);

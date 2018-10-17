@@ -5,13 +5,18 @@
 #ifndef LOGINSERVER_PLAY_H
 #define LOGINSERVER_PLAY_H
 
-
+#include <iostream>
 class Play {
 
 public:
 
-    int heroid=-1;
-    bool toroom= false;
+    Play();
+    std::string name;
+    int heroid; //选择的英雄
+    bool toroom; //是否进入房间
+    int click_hero;//点击的英雄
+    int index;//位置
+    int Ranks;//队伍
 };
 
 

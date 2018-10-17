@@ -57,6 +57,10 @@ message rqcode
     int32 code=1;
 }
 
+message room_id
+{
+    int32 id=1;
+}
 //开始匹配
 message matching
 {
@@ -64,15 +68,27 @@ message matching
 
 }
 
+message to_room
+{
+    int32 room_id=1;
+}
+
+message cilck_hero
+{
+
+ int32 room_id=1;
+ int32 heroid=2;
+
+}
 //房间角色信息
 message role_hore
 {
-    string roleName=1;
-    int32 exp=2;
-    int32 money=3;
-    int32 level=4;
-    bool  ready=5; // 是否准备
-    int32 heroid=6;  //选择英雄
+    string roleName=1; //名字
+    int32 cilckhero=2; //点击的英雄
+    int32 ranks=3; //队伍
+    int32 index=4; //位置
+    int32 heroid=5;  //选择英雄
+    bool toroom=6;  //是否进入房间
 }
 //返回房间信息
 message roominfo
