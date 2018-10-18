@@ -38,7 +38,7 @@ namespace protobuf_User_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[13];
+  static const ::google::protobuf::internal::ParseTable schema[19];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -67,9 +67,21 @@ extern addroleDefaultTypeInternal _addrole_default_instance_;
 class cilck_hero;
 class cilck_heroDefaultTypeInternal;
 extern cilck_heroDefaultTypeInternal _cilck_hero_default_instance_;
+class hero;
+class heroDefaultTypeInternal;
+extern heroDefaultTypeInternal _hero_default_instance_;
+class hero_all;
+class hero_allDefaultTypeInternal;
+extern hero_allDefaultTypeInternal _hero_all_default_instance_;
 class matching;
 class matchingDefaultTypeInternal;
 extern matchingDefaultTypeInternal _matching_default_instance_;
+class re_message_all;
+class re_message_allDefaultTypeInternal;
+extern re_message_allDefaultTypeInternal _re_message_all_default_instance_;
+class re_message_room;
+class re_message_roomDefaultTypeInternal;
+extern re_message_roomDefaultTypeInternal _re_message_room_default_instance_;
 class role_hore;
 class role_horeDefaultTypeInternal;
 extern role_horeDefaultTypeInternal _role_hore_default_instance_;
@@ -82,6 +94,12 @@ extern roominfoDefaultTypeInternal _roominfo_default_instance_;
 class rqcode;
 class rqcodeDefaultTypeInternal;
 extern rqcodeDefaultTypeInternal _rqcode_default_instance_;
+class select_hero;
+class select_heroDefaultTypeInternal;
+extern select_heroDefaultTypeInternal _select_hero_default_instance_;
+class send_message;
+class send_messageDefaultTypeInternal;
+extern send_messageDefaultTypeInternal _send_message_default_instance_;
 class to_room;
 class to_roomDefaultTypeInternal;
 extern to_roomDefaultTypeInternal _to_room_default_instance_;
@@ -95,11 +113,17 @@ template<> ::User::RqRegister* Arena::CreateMaybeMessage<::User::RqRegister>(Are
 template<> ::User::Rqrole* Arena::CreateMaybeMessage<::User::Rqrole>(Arena*);
 template<> ::User::addrole* Arena::CreateMaybeMessage<::User::addrole>(Arena*);
 template<> ::User::cilck_hero* Arena::CreateMaybeMessage<::User::cilck_hero>(Arena*);
+template<> ::User::hero* Arena::CreateMaybeMessage<::User::hero>(Arena*);
+template<> ::User::hero_all* Arena::CreateMaybeMessage<::User::hero_all>(Arena*);
 template<> ::User::matching* Arena::CreateMaybeMessage<::User::matching>(Arena*);
+template<> ::User::re_message_all* Arena::CreateMaybeMessage<::User::re_message_all>(Arena*);
+template<> ::User::re_message_room* Arena::CreateMaybeMessage<::User::re_message_room>(Arena*);
 template<> ::User::role_hore* Arena::CreateMaybeMessage<::User::role_hore>(Arena*);
 template<> ::User::room_id* Arena::CreateMaybeMessage<::User::room_id>(Arena*);
 template<> ::User::roominfo* Arena::CreateMaybeMessage<::User::roominfo>(Arena*);
 template<> ::User::rqcode* Arena::CreateMaybeMessage<::User::rqcode>(Arena*);
+template<> ::User::select_hero* Arena::CreateMaybeMessage<::User::select_hero>(Arena*);
+template<> ::User::send_message* Arena::CreateMaybeMessage<::User::send_message>(Arena*);
 template<> ::User::to_room* Arena::CreateMaybeMessage<::User::to_room>(Arena*);
 }  // namespace protobuf
 }  // namespace google
@@ -1360,6 +1384,116 @@ class cilck_hero : public ::google::protobuf::Message /* @@protoc_insertion_poin
 };
 // -------------------------------------------------------------------
 
+class select_hero : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:User.select_hero) */ {
+ public:
+  select_hero();
+  virtual ~select_hero();
+
+  select_hero(const select_hero& from);
+
+  inline select_hero& operator=(const select_hero& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  select_hero(select_hero&& from) noexcept
+    : select_hero() {
+    *this = ::std::move(from);
+  }
+
+  inline select_hero& operator=(select_hero&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const select_hero& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const select_hero* internal_default_instance() {
+    return reinterpret_cast<const select_hero*>(
+               &_select_hero_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  void Swap(select_hero* other);
+  friend void swap(select_hero& a, select_hero& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline select_hero* New() const final {
+    return CreateMaybeMessage<select_hero>(NULL);
+  }
+
+  select_hero* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<select_hero>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const select_hero& from);
+  void MergeFrom(const select_hero& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(select_hero* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // int32 room_id = 1;
+  void clear_room_id();
+  static const int kRoomIdFieldNumber = 1;
+  ::google::protobuf::int32 room_id() const;
+  void set_room_id(::google::protobuf::int32 value);
+
+  // int32 heroid = 2;
+  void clear_heroid();
+  static const int kHeroidFieldNumber = 2;
+  ::google::protobuf::int32 heroid() const;
+  void set_heroid(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:User.select_hero)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::int32 room_id_;
+  ::google::protobuf::int32 heroid_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_User_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
 class role_hore : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:User.role_hore) */ {
  public:
   role_hore();
@@ -1395,7 +1529,7 @@ class role_hore : public ::google::protobuf::Message /* @@protoc_insertion_point
                &_role_hore_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   void Swap(role_hore* other);
   friend void swap(role_hore& a, role_hore& b) {
@@ -1541,7 +1675,7 @@ class roominfo : public ::google::protobuf::Message /* @@protoc_insertion_point(
                &_roominfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    13;
 
   void Swap(roominfo* other);
   friend void swap(roominfo& a, roominfo& b) {
@@ -1610,6 +1744,603 @@ class roominfo : public ::google::protobuf::Message /* @@protoc_insertion_point(
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::User::role_hore > role_list_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_User_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class hero : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:User.hero) */ {
+ public:
+  hero();
+  virtual ~hero();
+
+  hero(const hero& from);
+
+  inline hero& operator=(const hero& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  hero(hero&& from) noexcept
+    : hero() {
+    *this = ::std::move(from);
+  }
+
+  inline hero& operator=(hero&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const hero& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const hero* internal_default_instance() {
+    return reinterpret_cast<const hero*>(
+               &_hero_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    14;
+
+  void Swap(hero* other);
+  friend void swap(hero& a, hero& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline hero* New() const final {
+    return CreateMaybeMessage<hero>(NULL);
+  }
+
+  hero* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<hero>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const hero& from);
+  void MergeFrom(const hero& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(hero* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string heroname = 2;
+  void clear_heroname();
+  static const int kHeronameFieldNumber = 2;
+  const ::std::string& heroname() const;
+  void set_heroname(const ::std::string& value);
+  #if LANG_CXX11
+  void set_heroname(::std::string&& value);
+  #endif
+  void set_heroname(const char* value);
+  void set_heroname(const char* value, size_t size);
+  ::std::string* mutable_heroname();
+  ::std::string* release_heroname();
+  void set_allocated_heroname(::std::string* heroname);
+
+  // string describe = 3;
+  void clear_describe();
+  static const int kDescribeFieldNumber = 3;
+  const ::std::string& describe() const;
+  void set_describe(const ::std::string& value);
+  #if LANG_CXX11
+  void set_describe(::std::string&& value);
+  #endif
+  void set_describe(const char* value);
+  void set_describe(const char* value, size_t size);
+  ::std::string* mutable_describe();
+  ::std::string* release_describe();
+  void set_allocated_describe(::std::string* describe);
+
+  // int32 heroid = 1;
+  void clear_heroid();
+  static const int kHeroidFieldNumber = 1;
+  ::google::protobuf::int32 heroid() const;
+  void set_heroid(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:User.hero)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr heroname_;
+  ::google::protobuf::internal::ArenaStringPtr describe_;
+  ::google::protobuf::int32 heroid_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_User_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class hero_all : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:User.hero_all) */ {
+ public:
+  hero_all();
+  virtual ~hero_all();
+
+  hero_all(const hero_all& from);
+
+  inline hero_all& operator=(const hero_all& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  hero_all(hero_all&& from) noexcept
+    : hero_all() {
+    *this = ::std::move(from);
+  }
+
+  inline hero_all& operator=(hero_all&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const hero_all& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const hero_all* internal_default_instance() {
+    return reinterpret_cast<const hero_all*>(
+               &_hero_all_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    15;
+
+  void Swap(hero_all* other);
+  friend void swap(hero_all& a, hero_all& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline hero_all* New() const final {
+    return CreateMaybeMessage<hero_all>(NULL);
+  }
+
+  hero_all* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<hero_all>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const hero_all& from);
+  void MergeFrom(const hero_all& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(hero_all* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .User.hero hero_list = 1;
+  int hero_list_size() const;
+  void clear_hero_list();
+  static const int kHeroListFieldNumber = 1;
+  ::User::hero* mutable_hero_list(int index);
+  ::google::protobuf::RepeatedPtrField< ::User::hero >*
+      mutable_hero_list();
+  const ::User::hero& hero_list(int index) const;
+  ::User::hero* add_hero_list();
+  const ::google::protobuf::RepeatedPtrField< ::User::hero >&
+      hero_list() const;
+
+  // @@protoc_insertion_point(class_scope:User.hero_all)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::User::hero > hero_list_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_User_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class re_message_all : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:User.re_message_all) */ {
+ public:
+  re_message_all();
+  virtual ~re_message_all();
+
+  re_message_all(const re_message_all& from);
+
+  inline re_message_all& operator=(const re_message_all& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  re_message_all(re_message_all&& from) noexcept
+    : re_message_all() {
+    *this = ::std::move(from);
+  }
+
+  inline re_message_all& operator=(re_message_all&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const re_message_all& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const re_message_all* internal_default_instance() {
+    return reinterpret_cast<const re_message_all*>(
+               &_re_message_all_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    16;
+
+  void Swap(re_message_all* other);
+  friend void swap(re_message_all& a, re_message_all& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline re_message_all* New() const final {
+    return CreateMaybeMessage<re_message_all>(NULL);
+  }
+
+  re_message_all* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<re_message_all>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const re_message_all& from);
+  void MergeFrom(const re_message_all& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(re_message_all* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string message = 1;
+  void clear_message();
+  static const int kMessageFieldNumber = 1;
+  const ::std::string& message() const;
+  void set_message(const ::std::string& value);
+  #if LANG_CXX11
+  void set_message(::std::string&& value);
+  #endif
+  void set_message(const char* value);
+  void set_message(const char* value, size_t size);
+  ::std::string* mutable_message();
+  ::std::string* release_message();
+  void set_allocated_message(::std::string* message);
+
+  // @@protoc_insertion_point(class_scope:User.re_message_all)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr message_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_User_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class re_message_room : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:User.re_message_room) */ {
+ public:
+  re_message_room();
+  virtual ~re_message_room();
+
+  re_message_room(const re_message_room& from);
+
+  inline re_message_room& operator=(const re_message_room& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  re_message_room(re_message_room&& from) noexcept
+    : re_message_room() {
+    *this = ::std::move(from);
+  }
+
+  inline re_message_room& operator=(re_message_room&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const re_message_room& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const re_message_room* internal_default_instance() {
+    return reinterpret_cast<const re_message_room*>(
+               &_re_message_room_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    17;
+
+  void Swap(re_message_room* other);
+  friend void swap(re_message_room& a, re_message_room& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline re_message_room* New() const final {
+    return CreateMaybeMessage<re_message_room>(NULL);
+  }
+
+  re_message_room* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<re_message_room>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const re_message_room& from);
+  void MergeFrom(const re_message_room& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(re_message_room* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string message = 2;
+  void clear_message();
+  static const int kMessageFieldNumber = 2;
+  const ::std::string& message() const;
+  void set_message(const ::std::string& value);
+  #if LANG_CXX11
+  void set_message(::std::string&& value);
+  #endif
+  void set_message(const char* value);
+  void set_message(const char* value, size_t size);
+  ::std::string* mutable_message();
+  ::std::string* release_message();
+  void set_allocated_message(::std::string* message);
+
+  // int32 roomid = 1;
+  void clear_roomid();
+  static const int kRoomidFieldNumber = 1;
+  ::google::protobuf::int32 roomid() const;
+  void set_roomid(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:User.re_message_room)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr message_;
+  ::google::protobuf::int32 roomid_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_User_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class send_message : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:User.send_message) */ {
+ public:
+  send_message();
+  virtual ~send_message();
+
+  send_message(const send_message& from);
+
+  inline send_message& operator=(const send_message& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  send_message(send_message&& from) noexcept
+    : send_message() {
+    *this = ::std::move(from);
+  }
+
+  inline send_message& operator=(send_message&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const send_message& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const send_message* internal_default_instance() {
+    return reinterpret_cast<const send_message*>(
+               &_send_message_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    18;
+
+  void Swap(send_message* other);
+  friend void swap(send_message& a, send_message& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline send_message* New() const final {
+    return CreateMaybeMessage<send_message>(NULL);
+  }
+
+  send_message* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<send_message>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const send_message& from);
+  void MergeFrom(const send_message& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(send_message* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string name = 1;
+  void clear_name();
+  static const int kNameFieldNumber = 1;
+  const ::std::string& name() const;
+  void set_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_name(::std::string&& value);
+  #endif
+  void set_name(const char* value);
+  void set_name(const char* value, size_t size);
+  ::std::string* mutable_name();
+  ::std::string* release_name();
+  void set_allocated_name(::std::string* name);
+
+  // string message = 2;
+  void clear_message();
+  static const int kMessageFieldNumber = 2;
+  const ::std::string& message() const;
+  void set_message(const ::std::string& value);
+  #if LANG_CXX11
+  void set_message(::std::string&& value);
+  #endif
+  void set_message(const char* value);
+  void set_message(const char* value, size_t size);
+  ::std::string* mutable_message();
+  ::std::string* release_message();
+  void set_allocated_message(::std::string* message);
+
+  // @@protoc_insertion_point(class_scope:User.send_message)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr name_;
+  ::google::protobuf::internal::ArenaStringPtr message_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_User_2eproto::TableStruct;
 };
@@ -2244,6 +2975,38 @@ inline void cilck_hero::set_heroid(::google::protobuf::int32 value) {
 
 // -------------------------------------------------------------------
 
+// select_hero
+
+// int32 room_id = 1;
+inline void select_hero::clear_room_id() {
+  room_id_ = 0;
+}
+inline ::google::protobuf::int32 select_hero::room_id() const {
+  // @@protoc_insertion_point(field_get:User.select_hero.room_id)
+  return room_id_;
+}
+inline void select_hero::set_room_id(::google::protobuf::int32 value) {
+  
+  room_id_ = value;
+  // @@protoc_insertion_point(field_set:User.select_hero.room_id)
+}
+
+// int32 heroid = 2;
+inline void select_hero::clear_heroid() {
+  heroid_ = 0;
+}
+inline ::google::protobuf::int32 select_hero::heroid() const {
+  // @@protoc_insertion_point(field_get:User.select_hero.heroid)
+  return heroid_;
+}
+inline void select_hero::set_heroid(::google::protobuf::int32 value) {
+  
+  heroid_ = value;
+  // @@protoc_insertion_point(field_set:User.select_hero.heroid)
+}
+
+// -------------------------------------------------------------------
+
 // role_hore
 
 // string roleName = 1;
@@ -2403,9 +3166,417 @@ roominfo::role_list() const {
   return role_list_;
 }
 
+// -------------------------------------------------------------------
+
+// hero
+
+// int32 heroid = 1;
+inline void hero::clear_heroid() {
+  heroid_ = 0;
+}
+inline ::google::protobuf::int32 hero::heroid() const {
+  // @@protoc_insertion_point(field_get:User.hero.heroid)
+  return heroid_;
+}
+inline void hero::set_heroid(::google::protobuf::int32 value) {
+  
+  heroid_ = value;
+  // @@protoc_insertion_point(field_set:User.hero.heroid)
+}
+
+// string heroname = 2;
+inline void hero::clear_heroname() {
+  heroname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& hero::heroname() const {
+  // @@protoc_insertion_point(field_get:User.hero.heroname)
+  return heroname_.GetNoArena();
+}
+inline void hero::set_heroname(const ::std::string& value) {
+  
+  heroname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:User.hero.heroname)
+}
+#if LANG_CXX11
+inline void hero::set_heroname(::std::string&& value) {
+  
+  heroname_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:User.hero.heroname)
+}
+#endif
+inline void hero::set_heroname(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  heroname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:User.hero.heroname)
+}
+inline void hero::set_heroname(const char* value, size_t size) {
+  
+  heroname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:User.hero.heroname)
+}
+inline ::std::string* hero::mutable_heroname() {
+  
+  // @@protoc_insertion_point(field_mutable:User.hero.heroname)
+  return heroname_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* hero::release_heroname() {
+  // @@protoc_insertion_point(field_release:User.hero.heroname)
+  
+  return heroname_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void hero::set_allocated_heroname(::std::string* heroname) {
+  if (heroname != NULL) {
+    
+  } else {
+    
+  }
+  heroname_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), heroname);
+  // @@protoc_insertion_point(field_set_allocated:User.hero.heroname)
+}
+
+// string describe = 3;
+inline void hero::clear_describe() {
+  describe_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& hero::describe() const {
+  // @@protoc_insertion_point(field_get:User.hero.describe)
+  return describe_.GetNoArena();
+}
+inline void hero::set_describe(const ::std::string& value) {
+  
+  describe_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:User.hero.describe)
+}
+#if LANG_CXX11
+inline void hero::set_describe(::std::string&& value) {
+  
+  describe_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:User.hero.describe)
+}
+#endif
+inline void hero::set_describe(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  describe_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:User.hero.describe)
+}
+inline void hero::set_describe(const char* value, size_t size) {
+  
+  describe_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:User.hero.describe)
+}
+inline ::std::string* hero::mutable_describe() {
+  
+  // @@protoc_insertion_point(field_mutable:User.hero.describe)
+  return describe_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* hero::release_describe() {
+  // @@protoc_insertion_point(field_release:User.hero.describe)
+  
+  return describe_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void hero::set_allocated_describe(::std::string* describe) {
+  if (describe != NULL) {
+    
+  } else {
+    
+  }
+  describe_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), describe);
+  // @@protoc_insertion_point(field_set_allocated:User.hero.describe)
+}
+
+// -------------------------------------------------------------------
+
+// hero_all
+
+// repeated .User.hero hero_list = 1;
+inline int hero_all::hero_list_size() const {
+  return hero_list_.size();
+}
+inline void hero_all::clear_hero_list() {
+  hero_list_.Clear();
+}
+inline ::User::hero* hero_all::mutable_hero_list(int index) {
+  // @@protoc_insertion_point(field_mutable:User.hero_all.hero_list)
+  return hero_list_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::User::hero >*
+hero_all::mutable_hero_list() {
+  // @@protoc_insertion_point(field_mutable_list:User.hero_all.hero_list)
+  return &hero_list_;
+}
+inline const ::User::hero& hero_all::hero_list(int index) const {
+  // @@protoc_insertion_point(field_get:User.hero_all.hero_list)
+  return hero_list_.Get(index);
+}
+inline ::User::hero* hero_all::add_hero_list() {
+  // @@protoc_insertion_point(field_add:User.hero_all.hero_list)
+  return hero_list_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::User::hero >&
+hero_all::hero_list() const {
+  // @@protoc_insertion_point(field_list:User.hero_all.hero_list)
+  return hero_list_;
+}
+
+// -------------------------------------------------------------------
+
+// re_message_all
+
+// string message = 1;
+inline void re_message_all::clear_message() {
+  message_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& re_message_all::message() const {
+  // @@protoc_insertion_point(field_get:User.re_message_all.message)
+  return message_.GetNoArena();
+}
+inline void re_message_all::set_message(const ::std::string& value) {
+  
+  message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:User.re_message_all.message)
+}
+#if LANG_CXX11
+inline void re_message_all::set_message(::std::string&& value) {
+  
+  message_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:User.re_message_all.message)
+}
+#endif
+inline void re_message_all::set_message(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:User.re_message_all.message)
+}
+inline void re_message_all::set_message(const char* value, size_t size) {
+  
+  message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:User.re_message_all.message)
+}
+inline ::std::string* re_message_all::mutable_message() {
+  
+  // @@protoc_insertion_point(field_mutable:User.re_message_all.message)
+  return message_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* re_message_all::release_message() {
+  // @@protoc_insertion_point(field_release:User.re_message_all.message)
+  
+  return message_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void re_message_all::set_allocated_message(::std::string* message) {
+  if (message != NULL) {
+    
+  } else {
+    
+  }
+  message_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), message);
+  // @@protoc_insertion_point(field_set_allocated:User.re_message_all.message)
+}
+
+// -------------------------------------------------------------------
+
+// re_message_room
+
+// int32 roomid = 1;
+inline void re_message_room::clear_roomid() {
+  roomid_ = 0;
+}
+inline ::google::protobuf::int32 re_message_room::roomid() const {
+  // @@protoc_insertion_point(field_get:User.re_message_room.roomid)
+  return roomid_;
+}
+inline void re_message_room::set_roomid(::google::protobuf::int32 value) {
+  
+  roomid_ = value;
+  // @@protoc_insertion_point(field_set:User.re_message_room.roomid)
+}
+
+// string message = 2;
+inline void re_message_room::clear_message() {
+  message_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& re_message_room::message() const {
+  // @@protoc_insertion_point(field_get:User.re_message_room.message)
+  return message_.GetNoArena();
+}
+inline void re_message_room::set_message(const ::std::string& value) {
+  
+  message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:User.re_message_room.message)
+}
+#if LANG_CXX11
+inline void re_message_room::set_message(::std::string&& value) {
+  
+  message_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:User.re_message_room.message)
+}
+#endif
+inline void re_message_room::set_message(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:User.re_message_room.message)
+}
+inline void re_message_room::set_message(const char* value, size_t size) {
+  
+  message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:User.re_message_room.message)
+}
+inline ::std::string* re_message_room::mutable_message() {
+  
+  // @@protoc_insertion_point(field_mutable:User.re_message_room.message)
+  return message_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* re_message_room::release_message() {
+  // @@protoc_insertion_point(field_release:User.re_message_room.message)
+  
+  return message_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void re_message_room::set_allocated_message(::std::string* message) {
+  if (message != NULL) {
+    
+  } else {
+    
+  }
+  message_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), message);
+  // @@protoc_insertion_point(field_set_allocated:User.re_message_room.message)
+}
+
+// -------------------------------------------------------------------
+
+// send_message
+
+// string name = 1;
+inline void send_message::clear_name() {
+  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& send_message::name() const {
+  // @@protoc_insertion_point(field_get:User.send_message.name)
+  return name_.GetNoArena();
+}
+inline void send_message::set_name(const ::std::string& value) {
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:User.send_message.name)
+}
+#if LANG_CXX11
+inline void send_message::set_name(::std::string&& value) {
+  
+  name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:User.send_message.name)
+}
+#endif
+inline void send_message::set_name(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:User.send_message.name)
+}
+inline void send_message::set_name(const char* value, size_t size) {
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:User.send_message.name)
+}
+inline ::std::string* send_message::mutable_name() {
+  
+  // @@protoc_insertion_point(field_mutable:User.send_message.name)
+  return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* send_message::release_name() {
+  // @@protoc_insertion_point(field_release:User.send_message.name)
+  
+  return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void send_message::set_allocated_name(::std::string* name) {
+  if (name != NULL) {
+    
+  } else {
+    
+  }
+  name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
+  // @@protoc_insertion_point(field_set_allocated:User.send_message.name)
+}
+
+// string message = 2;
+inline void send_message::clear_message() {
+  message_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& send_message::message() const {
+  // @@protoc_insertion_point(field_get:User.send_message.message)
+  return message_.GetNoArena();
+}
+inline void send_message::set_message(const ::std::string& value) {
+  
+  message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:User.send_message.message)
+}
+#if LANG_CXX11
+inline void send_message::set_message(::std::string&& value) {
+  
+  message_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:User.send_message.message)
+}
+#endif
+inline void send_message::set_message(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:User.send_message.message)
+}
+inline void send_message::set_message(const char* value, size_t size) {
+  
+  message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:User.send_message.message)
+}
+inline ::std::string* send_message::mutable_message() {
+  
+  // @@protoc_insertion_point(field_mutable:User.send_message.message)
+  return message_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* send_message::release_message() {
+  // @@protoc_insertion_point(field_release:User.send_message.message)
+  
+  return message_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void send_message::set_allocated_message(::std::string* message) {
+  if (message != NULL) {
+    
+  } else {
+    
+  }
+  message_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), message);
+  // @@protoc_insertion_point(field_set_allocated:User.send_message.message)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

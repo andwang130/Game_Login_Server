@@ -27,6 +27,9 @@ private:
     //获得房间所有信息
     void getroom(std::map<CoonPrt,play_prt> &playmap,std::string &buf);
 
+    //获得所有英雄信息
+    void gethero(std::string &buf);
+
     //群发
     void group_message(int model1,int model2,int coomd,std::string &data,std::map<CoonPrt,play_prt> &playmap);
 

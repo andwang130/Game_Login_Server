@@ -8,6 +8,7 @@
 #include "../commds.h"
 #include "../Net/Tcpcoonetion.h"
 #include "../Model/DataBase.h"
+#include "../config.h"
 class BaseHandler {
 
 public:

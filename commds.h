@@ -117,7 +117,7 @@ namespace selecthore
         {
 
             const int into=1;//进入房间
-            const int getroom=2;//获取房间信息
+            const int gethero=2;
             const int cilck=3; //点击了一个英雄
             const int select=4;//选择一个英雄
         }
@@ -128,12 +128,15 @@ namespace selecthore
 namespace talk
 {
     const short level1=5;
-    namespace matching_
+    namespace send
     {
         const short level2=1;
         namespace coomd
         {
-            const int send=1;//发送聊天信息
+
+            const int send_all=2; //发送给所有任
+            const int send_room=3; //发送到整个房间
+            const int send_tem=4; //发送给队友
         }
 
     }

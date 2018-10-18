@@ -75,10 +75,16 @@ message to_room
 
 message cilck_hero
 {
-
  int32 room_id=1;
  int32 heroid=2;
+}
 
+
+//确定选择英雄
+message select_hero
+{
+    int32 room_id=1;
+    int32 heroid=2;
 }
 //房间角色信息
 message role_hore
@@ -96,5 +102,34 @@ message roominfo
 repeated role_hore role_list=1;
 
 }
+message hero
+{
+    int32  heroid=1;
+    string heroname=2;
+    string describe=3;
+}
+message hero_all
+{
+    repeated hero hero_list=1;
+}
 
 
+//发送给所有用户的消息,只有一个消息
+message re_message_all
+{
+    string message=1;
+}
+
+//发送队友或者，房间的消息，需要一个房间号，来找到这个房间
+message re_message_room
+{   int32 roomid=1;
+    string message=2;
+}
+
+//返回的消息给其他用户
+message send_message
+{
+
+    string name=1; //发送改消息的名字
+    string message=2;//消息内容
+}

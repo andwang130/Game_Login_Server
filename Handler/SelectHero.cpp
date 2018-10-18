@@ -20,6 +20,13 @@ SelectHero::SelectHero(const CoonPrt coonPrt,protocol_ &aProtocol):BaseHandler(c
             select_hero();
             break;
         }
+        case selecthore::select::coomd::cilck:
+        {
+            cilck_hero();
+            break;
+        }
+
+
         default:
         {
             break;
@@ -31,17 +38,17 @@ SelectHero::SelectHero(const CoonPrt coonPrt,protocol_ &aProtocol):BaseHandler(c
 
 void SelectHero::cilck_hero()
 {
-    std::lock_guard<std::mutex> lk(roomMutex);
     User::cilck_hero cilck_hero_;
     if(!cilck_hero_.ParseFromString(aProtocol_.data))
     { return; }
 
+    std::lock_guard<std::mutex> lk(roomMutex);
     auto ite=roommap.find(cilck_hero_.room_id());
-    if(ite==roommap.end())
+    if(ite==roommap.end())  //房间不存在
     { return;}
 
     auto play_ite=ite->second->plays_.find(coonPrt_);
-    if(play_ite==ite->second->plays_.end())
+    if(play_ite==ite->second->plays_.end()) //不在该房间
     {return;}
 
     play_prt play_prt_=play_ite->second;
@@ -66,11 +73,11 @@ void SelectHero::into_room()
 {
 
 
-    std::lock_guard<std::mutex> lk(roomMutex);
     User::to_room to_room_;
     if(!to_room_.ParseFromString(aProtocol_.data))
     { return; }
 
+    std::lock_guard<std::mutex> lk(roomMutex);
     auto ite=roommap.find(to_room_.room_id());
     if(ite==roommap.end())
     { return;}
@@ -87,9 +94,11 @@ void SelectHero::into_room()
     group_message(4,1,3,buf,ite->second->plays_,coonPrt_);
 
     getroom(ite->second->plays_,buf);
-
     tosend(4,1,4,buf);
 
+    gethero(buf);
+    //返回所有英雄信息
+    tosend(4,1,5,buf);
 
 }
 
@@ -97,7 +106,39 @@ void SelectHero::into_room()
 //一个用户确定选择了英雄，修改该用户的英雄id,对所用用户群发该用户的状态
 void SelectHero::select_hero()
 {
+    User::select_hero select_hero_;
+    if(!select_hero_.ParseFromString(aProtocol_.data))
+    { return; }
 
+    std::lock_guard<std::mutex> lk(roomMutex);
+
+    auto ite=roommap.find(select_hero_.room_id());
+    if(ite==roommap.end())
+    { return;}
+
+    auto play_ite=ite->second->plays_.find(coonPrt_);
+    if(play_ite==ite->second->plays_.end())
+    {return;}
+    play_prt play_prt_=play_ite->second;
+    play_prt_->heroid=select_hero_.heroid();
+    std::string buf;
+    set_role_hore(play_prt_,buf);
+    group_message(4,1,3,buf,ite->second->plays_);
+}
+
+void SelectHero::gethero(std::string &buf)
+{
+
+    User::hero_all hero_all;
+    for(int i=0;i<HERO_LIST.size();i++)
+    {
+       User::hero *new_hero=hero_all.add_hero_list();
+        new_hero->set_heroid(HERO_LIST[i].id_);
+        new_hero->set_heroname(HERO_LIST[i].name_);
+        new_hero->set_describe(HERO_LIST[i].describe_);
+    }
+
+    buf=std::move(hero_all.SerializeAsString());
 
 }
 //一个用户进入了房间，需要获得所用用户的信息

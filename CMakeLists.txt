@@ -60,7 +60,7 @@ add_executable(LoginServer main.cpp
         Model/DataBase.cpp
         config.cpp
         base/timeQueue/TimeQueue.cpp
-        base/timeQueue/Timer.cpp Handler/SelectHero.cpp Handler/SelectHero.h Model/Room.cpp Model/Room.h Model/Play.cpp Model/Play.h)
+        base/timeQueue/Timer.cpp Handler/SelectHero.cpp Handler/SelectHero.h Model/Room.cpp Model/Room.h Model/Play.cpp Model/Play.h Handler/TalkHandler.cpp Handler/TalkHandler.h)
 target_link_libraries(LoginServer libmysqlpp.so)#会在lib路径找到
 
 target_link_libraries(LoginServer ${PROTOBUF_LIBRARIES})
