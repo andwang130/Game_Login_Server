@@ -44,7 +44,10 @@ void matchingHandler::playmatching()
             {
                 {
                     std::lock_guard<mutex> lk(roleMutex);
-                    prt_Role role_prt=Login_role.find(coonPrt_)->second;
+                    auto role_ite=Login_role.find(coonPrt_);
+                    if(role_ite==Login_role.end())
+                    { return;;}
+                    prt_Role role_prt=role_ite->second;
                     ite.second->addPlayer(coonPrt_,role_prt);
                     ite.second->nowNum++;
 
@@ -98,14 +101,14 @@ void matchingHandler::confirm()
 
     if(prt_Filed_->confirmedNum==prt_Filed_->sizemax)
     {
-        User::rqcode rqcode_;
-        rqcode_.set_code(7);
+        User::room_id room_id_;
+        room_id_.set_id(fieldid);
 
         protocol_ newprotocol;
         newprotocol.model=3;
         newprotocol.model2=1;
-        newprotocol.coomd=1;
-        newprotocol.data=rqcode_.SerializeAsString();
+        newprotocol.coomd=7;
+        newprotocol.data=room_id_.SerializeAsString();
         std::string byte=newprotocol.get_byte();
 
 
@@ -113,7 +116,7 @@ void matchingHandler::confirm()
             std::lock_guard<std::mutex> lk(roomMutex);
             Room room;
             int ranks=1;
-            int index=1;
+            int index=0;
             for (auto ite:prt_Filed_->players_)
             {
 
@@ -121,13 +124,16 @@ void matchingHandler::confirm()
                 play.index=(ranks-1)*5+index;
                 play.Ranks=ranks;
                 play.name=ite.second->rolename_;
-                index++;
                 if(index%prt_Filed_->sizemax==0)
                 {
                     ranks++;
-                    index=1;
+                    index=0;
                 }
-                room.plays_[coonPrt_] = std::make_shared<Play>(play);
+
+
+                    index++;
+                
+                room.plays_[ite.first] = std::make_shared<Play>(play);
                 ite.first->sendloop(byte);
             }
             //创建一个房间
@@ -161,7 +167,10 @@ void waitmatching(int fieldid)
 
     cout<<"关闭一个房间"<<endl;
     std::lock_guard<std::mutex> lk(mathchingMutex);
-    auto field=Filedmap.find(fieldid)->second;
+    auto field_ite=Filedmap.find(fieldid);
+    if(field_ite==Filedmap.end())
+    { return;}
+    auto field=field_ite->second;
     if(field->confirmedNum!=field->sizemax)
     {
         User::rqcode rqcode_;

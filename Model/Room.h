@@ -15,6 +15,7 @@ class Room
 public:
     std::map<CoonPrt,play_prt> plays_;
     int ready_num;
+    std::vector<int> hero_in;
     timer_prt  room_timer;
 
 };

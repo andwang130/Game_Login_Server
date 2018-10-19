@@ -52,7 +52,15 @@ void SelectHero::cilck_hero()
     {return;}
 
     play_prt play_prt_=play_ite->second;
-    play_prt_->click_hero=cilck_hero_.heroid();
+    int id=cilck_hero_.heroid();
+    if(play_prt_->heroid==-1&&std::find(ite->second->hero_in.begin(),ite->second->hero_in.end(),id)==ite->second->hero_in.end())
+    {
+        play_prt_->click_hero=id;
+    } else
+    {
+        return;
+    }
+
 
     std::string buf;
     set_role_hore(play_prt_,buf);
@@ -120,10 +128,22 @@ void SelectHero::select_hero()
     if(play_ite==ite->second->plays_.end())
     {return;}
     play_prt play_prt_=play_ite->second;
-    play_prt_->heroid=select_hero_.heroid();
+
+    //为选择英雄，而且有一个点击的英雄
+    if(play_prt_->heroid==-1&&play_prt_->click_hero!=-1&&std::find(ite->second->hero_in.begin(),ite->second->hero_in.end(),play_prt_->click_hero)==ite->second->hero_in.end())
+    {
+        play_prt_->heroid=play_prt_->click_hero;
+        ite->second->hero_in.push_back(play_prt_->heroid);
+    } else
+    {
+        return;
+    }
     std::string buf;
     set_role_hore(play_prt_,buf);
-    group_message(4,1,3,buf,ite->second->plays_);
+    group_message(4,1,3,buf,ite->second->plays_,coonPrt_);
+
+    //给自己发，确认选择
+    tosend(4,1,2,buf);
 }
 
 void SelectHero::gethero(std::string &buf)
@@ -155,6 +175,7 @@ void SelectHero::getroom(std::map<CoonPrt,play_prt> &playmap,std::string &buf)
         role_hore_->set_ranks(play_prt1->Ranks);
         role_hore_->set_rolename(play_prt1->name);
         role_hore_->set_toroom(play_prt1->toroom);
+        role_hore_->set_heroid(play_prt1->heroid);
     }
     buf=std::move(roominfo_.SerializeAsString());
 
@@ -185,5 +206,6 @@ void SelectHero::set_role_hore(play_prt &play_prt1,std::string &buf)
     role_hore_.set_ranks(play_prt1->Ranks);
     role_hore_.set_rolename(play_prt1->name);
     role_hore_.set_toroom(play_prt1->toroom);
+    role_hore_.set_heroid(play_prt1->heroid);
     buf=std::move(role_hore_.SerializeAsString());
 }

@@ -35,6 +35,7 @@ std::lock_guard<std::mutex> uslk(Mutex);
 void removeFiledmap(const CoonPrt &coonPrt)
 {
     auto role=Login_role.find(coonPrt);
+    if(role==Login_role.end()){ return;}
     int fieldid=role->second->Fieldid_;
     auto field=Filedmap.find(fieldid);
     if(field==Filedmap.end())
