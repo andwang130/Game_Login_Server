@@ -13,10 +13,12 @@
 #include "Handler/roleHandler.h"
 #include "Handler/matchingHandler.h"
 #include "Handler/SelectHero.h"
+#include "Handler/TalkHandler.h"
 using namespace ZL;
 using namespace ZL::Net;
 inline void intermeadiary(const TcpcoontionPrt connprt,protocol_ &aProtocol_)
 {
+
     switch (aProtocol_.model)
     {
         case Login_model::level1:
@@ -39,10 +41,23 @@ inline void intermeadiary(const TcpcoontionPrt connprt,protocol_ &aProtocol_)
             SelectHero selectHero(connprt,aProtocol_);
             break;
         }
+        case talk::level1:
+        {
+            TalkHandler talkHandler(connprt,aProtocol_);
+            break;
+        }
+
 
         default:
         {
-
+            cout<<aProtocol_.data<<endl;
+            protocol_ new_protocol_;
+            new_protocol_.fin=0;
+            new_protocol_.model=10;
+            new_protocol_.model2=10;
+            new_protocol_.coomd=10;
+            new_protocol_.data="Loing_server";
+            connprt->sendloop(new_protocol_.get_byte());
         }
 
 

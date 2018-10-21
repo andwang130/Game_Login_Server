@@ -9,3 +9,4 @@ const hero FUWANG(0,"fuwang","xxxxxxx");
 const hero NVWANFG(1,"nvwang","xxxxxxx");
 
 const vector<hero> HERO_LIST={FUWANG,NVWANFG};
+const map<char *,int> Fight_ip_port={{"127.0.0.1",8081}};

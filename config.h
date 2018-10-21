@@ -37,5 +37,6 @@ extern const hero NVWANFG;
 
 extern const vector<hero> HERO_LIST;
 
+extern const map<char *,int> Fight_ip_port;
 
 #endif //LOGINSERVER_CONFIG_H

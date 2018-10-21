@@ -20,6 +20,13 @@ Socket::Socket(sockaddr_in &addr)
     server_in.sin_port=addr.sin_port;
     socketfd=socket(AF_INET,SOCK_STREAM,0);
 }
+Socket::Socket(char *ip,int port)
+{
+    server_in.sin_family=AF_INET;
+    server_in.sin_addr.s_addr=inet_addr(ip);
+    server_in.sin_port=htons(port);
+    socketfd=socket(AF_INET,SOCK_STREAM,0);
+}
 Socket::Socket(int fd)
 {
     socketfd=fd;
@@ -42,7 +49,11 @@ void Socket::bind()
 }
 void Socket::Connect()
 {
-
+    int ret=connect(socketfd,(struct sockaddr*)&server_in, sizeof(server_in));
+    if(ret<0)
+    {
+        assert(ret>0);
+    }
 }
 void Socket::listen()
 {

@@ -16,6 +16,7 @@ mutex roomMutex;
 map<int,prt_room> roommap;
 
 
+vector<prt_client>Figth_servers;
 
 void baseRemove(const CoonPrt &coonPrt)
 {

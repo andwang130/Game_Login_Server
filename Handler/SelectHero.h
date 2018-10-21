@@ -39,7 +39,10 @@ private:
     //设置protobuf角色信息
     void  set_role_hore(play_prt &play_prt1,std::string &buf);
 
+    //所有全部选择英雄，向战斗服务器发送消息，初始化战场
+    void ready_all(int roomid,prt_room &room);
 
+    void get_toFigth_servers_init(std::map<CoonPrt,play_prt> &playmap,int roomid,std::string &buf);
 };
 
 

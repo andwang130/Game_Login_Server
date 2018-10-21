@@ -13,7 +13,9 @@ using namespace ZL::Net;
 class test
 {
 public:
-    test(Eventloop *loop,inetAddress &address,std::string name):tcpServer(new TcpServer(loop,address,name))
+    test(Eventloop *loop,inetAddress &address,std::string name):
+    tcpServer(new TcpServer(loop,address,name)),
+    loop_(loop)
     {
         tcpServer->set_MessageCallback(std::bind(&test::on_meassgcallback,this,std::placeholders::_1,std::placeholders::_2,std::placeholders::_3));
         tcpServer->set_ConnectionCallback(std::bind(&test::on_cooncallback,this,std::placeholders::_1));
@@ -21,13 +23,26 @@ public:
         tcpServer->set_removeCallback_(std::bind(&test::on_removeCallback,this,std::placeholders::_1));
     }
     void start()
-    {
+    {   init_Fight_servr_conn();
         tcpServer->set_threadnumber(4);
         tcpServer->start();
     }
 
 private:
 
+
+    //初始化和战斗服务器连接
+    void init_Fight_servr_conn()
+    {
+        for(auto ite:Fight_ip_port)
+        {
+            std::shared_ptr<Tcpclient> tcpclient(new Tcpclient(loop_,ite.first,ite.second,"fightserver"));
+            tcpclient->set_MessageCallback(std::bind(&test::on_meassgcallback,this,std::placeholders::_1,std::placeholders::_2,std::placeholders::_3));
+
+            tcpclient->start();
+            Figth_servers.push_back(tcpclient);
+        }
+    }
     //断开连接回调函数
     void on_removeCallback(const TcpcoontionPrt &coon)
     {
@@ -42,23 +57,27 @@ private:
     //收到消息回调函数
     void on_meassgcallback(const TcpcoontionPrt &coon,Buffer*buffer,int m)
     {
-        protocol_ aProtocol;
-        if(buffer->readableBytes()>=13)
-        {
-            int8_t types=buffer->readInt8();
-            int32_t len=buffer->readInt32();
-            aProtocol.model=buffer->readInt16();
-            aProtocol.model2=buffer->readInt16();
-            aProtocol.coomd=buffer->readInt32();
-            cout<<"body长度"<<len<<endl;
-            cout<<"缓存区长度"<<buffer->readableBytes()<<endl;
-            if(buffer->readableBytes()>=len)
-            {
 
-                aProtocol.data=buffer->retrieveAsString(len);
-                buffer->shrink(0);
-                intermeadiary(coon,aProtocol);
+        protocol_ aProtocol;
+        while (true) {
+            if (buffer->readableBytes() >= 13) {
+                int8_t types = buffer->readInt8();
+                int32_t len = buffer->readInt32();
+                aProtocol.model = buffer->readInt16();
+                aProtocol.model2 = buffer->readInt16();
+                aProtocol.coomd = buffer->readInt32();
+                cout << "body长度" << len << endl;
+                cout << "缓存区长度" << buffer->readableBytes() << endl;
+                if (buffer->readableBytes() >= len) {
+                    aProtocol.data = buffer->retrieveAsString(len);
+                    buffer->shrink(0);
+                    intermeadiary(coon, aProtocol);
+                } else {
+                    buffer->retrieve(-13);
+                    break;
+                }
             }
+            else { break; }
         }
 
 
@@ -75,6 +94,7 @@ private:
 
     }
     std::shared_ptr<TcpServer> tcpServer;
+    Eventloop *loop_;
 };
 
 int main() {

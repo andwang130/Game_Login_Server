@@ -66,7 +66,7 @@ void TalkHandler::send_room(int flag)
     std::string buf=std::move(message.SerializeAsString());
     if(flag==SEND_ROOM) {
         for (auto play:plays) {
-            tosend(5, 1, 1, buf, play.first);
+            tosend(5, 1, 2, buf, play.first);
         }
     }
     else if(flag==SEND_TEM)
@@ -74,7 +74,7 @@ void TalkHandler::send_room(int flag)
         for (auto play:plays) {
             if(play.second->Ranks==my_play->second->Ranks)
             {
-            tosend(5, 1, 1, buf, play.first);
+            tosend(5, 1, 3, buf, play.first);
             }
         }
     }
@@ -103,4 +103,5 @@ void TalkHandler::send_all()
     {
         tosend(5,1,1,buf,ite.first);
     }
+    cout<<"send_all"<<endl;
 }

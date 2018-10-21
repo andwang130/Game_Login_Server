@@ -4,6 +4,7 @@
 
 #include "SelectHero.h"
 #include "../protobuf_maegss/User.pb.h"
+#include "../protobuf_maegss/to_Fight.pb.h"
 SelectHero::SelectHero(const CoonPrt coonPrt,protocol_ &aProtocol):BaseHandler(coonPrt,aProtocol)
 {
 
@@ -134,6 +135,7 @@ void SelectHero::select_hero()
     {
         play_prt_->heroid=play_prt_->click_hero;
         ite->second->hero_in.push_back(play_prt_->heroid);
+        ite->second->ready_num+=1;
     } else
     {
         return;
@@ -144,8 +146,45 @@ void SelectHero::select_hero()
 
     //给自己发，确认选择
     tosend(4,1,2,buf);
+    if(ite->second->ready_num==ite->second->plays_.size())
+    {
+        ready_all(ite->first,ite->second);
+    }
 }
 
+//所有人全部选择英雄选择英雄
+void SelectHero::ready_all(int roomid,prt_room &room)
+{
+
+    std::string buf;
+    get_toFigth_servers_init(room->plays_,roomid,buf);
+
+    protocol_ newprotocol;
+    newprotocol.model=10;
+    newprotocol.model2=1;
+    newprotocol.coomd=1;
+    newprotocol.fin=0;
+    newprotocol.data=buf;
+
+    Figth_servers[roomid%Figth_servers.size()]->send(newprotocol.get_byte());
+
+}
+void SelectHero::get_toFigth_servers_init(std::map<CoonPrt,play_prt> &playmap,int roomid,std::string &buf)
+{
+    to_Figth::Figth_init figth_init;
+    for(auto ite:playmap)
+    {   to_Figth::play *pyal_=figth_init.add_plays();
+        pyal_->set_index(ite.second->index);
+        pyal_->set_ranks(ite.second->Ranks);
+        pyal_->set_rolename(ite.second->name);
+        pyal_->set_heroid(ite.second->heroid);
+    }
+    figth_init.set_roomid(roomid);
+
+
+    buf=std::move(figth_init.SerializeAsString());
+
+}
 void SelectHero::gethero(std::string &buf)
 {
 
@@ -209,3 +248,4 @@ void SelectHero::set_role_hore(play_prt &play_prt1,std::string &buf)
     role_hore_.set_heroid(play_prt1->heroid);
     buf=std::move(role_hore_.SerializeAsString());
 }
+

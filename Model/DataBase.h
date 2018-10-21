@@ -13,12 +13,14 @@
 #include "Role.h"
 #include "Field.h"
 #include "Room.h"
+#include "../Net/Tcpclient.h"
 using namespace std;
 
 typedef std::shared_ptr<MUser> prt_User;
 typedef std::shared_ptr<Role> prt_Role;
 typedef std::shared_ptr<Field> prt_Filed;
 typedef std::shared_ptr<Room> prt_room;
+typedef std::shared_ptr<Tcpclient> prt_client;
 //extern声明全局对象,用static的话每个文件会有一个副本，静态变量一般用在类当中，供类函数使用
 
 //每个map一个锁
@@ -39,6 +41,9 @@ extern map<int,prt_Filed> Filedmap;
 //房间map
 extern mutex roomMutex;
 extern map<int,prt_room> roommap;
+
+//和战斗服务器的连接
+extern vector<prt_client>Figth_servers;
 
 extern void baseRemove(const CoonPrt &coonPrt);
 

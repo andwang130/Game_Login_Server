@@ -142,5 +142,21 @@ namespace talk
     }
 }
 
+//和战斗服务器通讯模块
+namespace to_Figth
+{
+    const short level1=10;
+    namespace send
+    {
+        const short level2=1;
+        namespace coomd
+        {
+
+            const int Figth_init=1;//战场数据初始化完成
+
+        }
+
+    }
+}
 
 #endif //LOGINSERVER_COMMDS_H
