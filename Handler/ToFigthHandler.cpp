@@ -38,14 +38,15 @@ void ToFigthHandler::rq_Figth_init()
         { return;}
         prtroom_=ite->second;
     }
-    for(to_Figth::Fight_play * play_figth :rq_fight_init_.add_fight_plays())
+    for(int i=0;i<rq_fight_init_.fight_plays_size();i++)
     {
+        to_Figth::Fight_play  play_figth=rq_fight_init_.fight_plays(i);
         for(auto play_room:prtroom_->plays_)
         {
-            if(play_room.second->index==play_figth->index())
+            if(play_room.second->index==play_figth.index())
             {
                 std::string buf;
-                rq_Fight_init_user(fightid,ip,port,play_figth->play_id(),buf);
+                rq_Fight_init_user(fightid,ip,port,play_figth.play_id(),buf);
                 send_fight_inti_user(play_room.first,buf);
             }
         }
@@ -66,9 +67,9 @@ void ToFigthHandler::rq_Fight_init_user(int fight_id,std::string &ip, int port,i
     buf=std::move(rq_fight_init_user_.SerializeAsString());
 
 }
-void ToFigthHandler::send_fight_inti_user(CoonPrt &coonPrt,std::string &messsage)
+void ToFigthHandler::send_fight_inti_user(const CoonPrt &coonPrt,std::string &messsage)
 {
 
-    tosend(5,1,8,messsage,coonPrt);
+    tosend(4,1,8,messsage,coonPrt);
 
 }

@@ -14,6 +14,7 @@
 #include "Handler/matchingHandler.h"
 #include "Handler/SelectHero.h"
 #include "Handler/TalkHandler.h"
+#include "Handler/ToFigthHandler.h"
 using namespace ZL;
 using namespace ZL::Net;
 inline void intermeadiary(const TcpcoontionPrt connprt,protocol_ &aProtocol_)
@@ -47,17 +48,22 @@ inline void intermeadiary(const TcpcoontionPrt connprt,protocol_ &aProtocol_)
             break;
         }
 
+        case to_Figth::level1:
+        {
+            ToFigthHandler toFigthHandler(connprt,aProtocol_);
+            break;
+        }
 
         default:
         {
-            cout<<aProtocol_.data<<endl;
-            protocol_ new_protocol_;
-            new_protocol_.fin=0;
-            new_protocol_.model=10;
-            new_protocol_.model2=10;
-            new_protocol_.coomd=10;
-            new_protocol_.data="Loing_server";
-            connprt->sendloop(new_protocol_.get_byte());
+//            cout<<aProtocol_.data<<endl;
+//            protocol_ new_protocol_;
+//            new_protocol_.fin=0;
+//            new_protocol_.model=10;
+//            new_protocol_.model2=10;
+//            new_protocol_.coomd=10;
+//            new_protocol_.data="Loing_server";
+//            connprt->sendloop(new_protocol_.get_byte());
         }
 
 

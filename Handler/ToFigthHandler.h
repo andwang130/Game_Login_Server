@@ -15,7 +15,7 @@ public:
 private:
     void rq_Figth_init();
     void rq_Fight_init_user(int fight_id,std::string &ip, int port,int play_id,std::string &buf);
-    void send_fight_inti_user(CoonPrt &coonPrt,std::string &messsage)
+    void send_fight_inti_user(const CoonPrt &coonPrt,std::string &messsage);
 };
 
 
