@@ -178,9 +178,11 @@ void SelectHero::get_toFigth_servers_init(std::map<CoonPrt,play_prt> &playmap,in
         pyal_->set_ranks(ite.second->Ranks);
         pyal_->set_rolename(ite.second->name);
         pyal_->set_heroid(ite.second->heroid);
+        cout<<ite.second->heroid<<endl;
     }
     figth_init.set_roomid(roomid);
 
+    std::cout<<figth_init.DebugString()<<std::endl;
 
     buf=std::move(figth_init.SerializeAsString());
 
